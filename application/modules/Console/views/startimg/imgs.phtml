@@ -1,0 +1,98 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div class="btn-toolbar" style="margin-bottom:2px;">
+    <a href="add" class="btn btn-primary"><i class="icon-plus"></i> 启动图添加</a>
+</div>
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">启动图列表</a>
+        <div id="page-stats" class="block-body collapse in">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th style="width:70px">启动图</th>
+                          <th style="width:50px">平台</th>
+                          <th style="width:80px">标题</th>
+                          <th style="width:80px">版本码</th>
+                          <th style="width:50px">类型</th>
+                          <th style="width:50px">时间限制</th>
+                          <th style="width:50px">显示</th>
+                          <th style="width:100px">上传时间</th>
+                          <th style="width:50px">上传人</th>
+                          <th style="width:70px">操作</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <?php foreach ($startimgs as $startimg) {?>
+                      <tr>
+                          <td>
+                          <?php if (!empty($startimg['images']['android'])) {?>
+                          <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $startimg['images']['android']?>.jpg" style="width:80px;height:80px;object-fit:cover">
+                          <?php } else {?>
+                          <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $startimg['images']['ios4']?>.jpg" style="width:80px;height:80px;object-fit:cover" >
+                          <?php }?>
+                          </td>
+                          <td style="vertical-align:middle">
+                          <?php if ($startimg['platform'] == 0) {
+                              echo '安卓';
+                          } else {
+                              echo 'ios';
+                          }?>
+                          </td>
+                          <td style="vertical-align:middle"><?php echo $startimg['title'];?></td>
+                          <td style="vertical-align:middle"><?php echo $startimg['code'];?></td>
+                          <td style="vertical-align:middle">
+                          <?php if ($startimg['action_type'] == 1) {
+                              echo 'Web';
+                          } else {
+                              echo '现场';
+                          }?>
+                          </td>
+                          <td style="vertical-align:middle"><?php echo $startimg['duration'].'s';?></td>
+                          <td style="vertical-align:middle">
+                          <?php if ($startimg['can_skip'] == 0) {
+                              echo '否';
+                          } else {
+                              echo '是';
+                          }?>
+                          </td>
+                          <td style="vertical-align:middle"><?php echo $startimg['create_time'];?></td>
+                          <td style="vertical-align:middle"><?php echo $startimg['operator'];?></td>
+                          <td style="vertical-align:middle">
+                              <a href="modify?img_id=<?php echo $startimg['id'];?>" title= "修改" ><i class="icon-pencil"></i></a>
+                              <a href="detail?img_id=<?php echo $startimg['id'];?>">详情</a>
+                              <?php if ($startimg['push'] == 1 && $startimg['platform'] == 1) {?>
+                              <a href="pushConfig?img_id=<?php echo $startimg['id'];?>">推送</a>
+                              <?php } elseif ($startimg['push'] == 1 && $startimg['platform'] == 0) {?>
+                              <a href="pushAndroidConfig?img_id=<?php echo $startimg['id'];?>">推送</a>
+                              <?php } else {?>
+                              <a href="javascript:void(0);" style="color:gray">已推送</a>
+                              <?php }?>
+                          </td>
+                      </tr>
+                      <?php }?>
+                  </tbody>
+              </table> 
+                <!--- START 分页模板 --->
+                
+                <?php echo $page_html;?>
+                    
+                <!--- END --->
+        </div>
+    </div>
+    
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php //echo @$osadmin_action_confirm;?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php 
+include(dirname(__DIR__)."/footer.phtml");
+?>

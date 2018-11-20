@@ -1,0 +1,77 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="groupData" method="GET" style="margin-bottom:0px">
+    <div style="float:left;margin-right:5px">
+        <label> 选择起始时间 </label>
+        <input type="text" id="start_date" name="start_date" value="<?php echo @$_GET['start_date'];?>" placeholder="起始时间" >
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label>选择结束时间</label>
+        <input type="text" id="end_date" name="end_date" value="<?php echo @$_GET['end_date'];?>" placeholder="结束时间" > 
+    </div>
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left">
+        <button type="submit" class="btn btn-primary"><strong>检索</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">数据记录</a>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th style="text-align:center;">日期</th>
+                    <th style="text-align:center;">小组总数</th>
+                    <th style="text-align:center;">新建小组数</th>
+                    <th style="text-align:center;">超过两人小组数</th>
+                    <th style="text-align:center;">有效小组数</th>
+                    <th style="text-align:center;">发起邀请次数</th>
+                    <th style="text-align:center;">受邀加入小组数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach (@$groupDatas as $groupData) { ?>
+                    <tr>
+                    <td style="text-align:center;"><?php echo $groupData['stat_date']?></td>
+                    <td style="text-align:center;"><?php if (@$groupData['data']['gt']['pv']) { echo $groupData['data']['gt']['pv'];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$groupData['data']['/us/group/create']['pv']) { echo $groupData['data']['/us/group/create']['pv'];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$groupData['data']['ptp']['pv']) { echo $groupData['data']['ptp']['pv'];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$groupData['data']['v']['pv']) { echo $groupData['data']['v']['pv'];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$groupData['data']['/us/group/invite']['pv']) { echo $groupData['data']['/us/group/invite']['pv'];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$groupData['data']['/us/user/weblogin']['pv']) { echo $groupData['data']['/us/user/weblogin']['pv'];} else {echo 0;}?></td>
+                    </tr>
+                <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+    </div>
+
+<script>
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+</script>
+	
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

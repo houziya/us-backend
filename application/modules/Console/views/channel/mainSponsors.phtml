@@ -1,0 +1,81 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div class="btn-toolbar">
+    <a href="mainSponsorsAdd" class="btn btn-primary"><i class="icon-plus"></i> 主渠道</a>
+     <a data-toggle="collapse" data-target="#search" href="#"  title= "检索"><button class="btn btn-primary" style="margin-left:5px"><i class="icon-search"></i></button></a>
+</div>
+<div id="search" class="collapse out">
+<form class="form_search"  method="post" style="margin-bottom:0px">
+    <div style="float:left;margin-right:5px">
+        <label>查询渠道商 <i class="label label-important"> 通过ID查询</i></label>
+        <input type="text" name="cid" value ="" > 
+        <input type="hidden" name="search" value="1" class="input-medium search-query">
+    </div>
+    <div class="btn-toolbar" style="padding-top:25px;padding-bottom:0px;margin-bottom:0px">
+        <button type="submit" class="btn btn-primary">检索</button>
+    </div>
+    <div style="clear:both;"></div>
+</form>
+</div>
+<div class="block">
+    <a href="#page-stats" class="block-heading" data-toggle="collapse">模块列表</a>
+    
+    <div id="page-stats" class="block-body collapse in">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th>ID</th>
+                <th>主渠道名称</th>
+                <th width="100px">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            if (!empty($sponsors)) {
+                foreach ($sponsors as $main) { ?>
+                    <tr>
+                        <td><?php echo $main['cid']; ?></td>
+                        <td><?php echo $main['main_channel_name']; ?></td>
+                        <td>
+                        <a href="subSponsors?method=link&cid=<?php echo $main['cid'];?>" title= "主渠道链接列表" ><i class="icon-list-alt"></i></a>
+                   		&nbsp;
+                        <a href="mainSponsorsModify?cid=<?php echo $main['cid'];?>" title= "修改" ><i class="icon-pencil"></i></a>
+                        <?php 
+                            if ($main['sub'] ==1) {
+                        ?>
+                        &nbsp;
+                        <a href="modifyPrice?cid=<?php echo $main['cid'];?>" title= "修改分渠道单价"><i class="icon-edit"></i></a>
+                    	<?php 
+                            } else {
+                        ?>
+                         &nbsp;
+                        <i class="icon-edit" disabled title= "无分渠道"></i>
+                        <?php 
+                            }
+                        ?>
+                        &nbsp;
+                        <a data-toggle="modal" href="#myModal" title= "删除" ><i class="icon-remove" href="mainSponsors?method=del&cid=<?php echo $main['cid'];?>"></i></a>
+                        </td>
+                    </tr>
+                <?php
+                }
+            }
+            ?>
+            </tbody>
+        </table>  
+    </div>
+</div>
+<?php echo $confirm; ?>
+<?php echo @$pageHtml; ?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?> 

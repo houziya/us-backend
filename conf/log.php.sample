@@ -1,0 +1,11 @@
+<?php
+return [
+    'traceLevel' => YII_DEBUG ? 3 : 0,
+    'targets' => [
+        [
+            'class' => 'yii\log\FileTarget',
+            'levels' => {{default .Env.US_PHP_YII_LOG_LEVELS "['error', 'warning', 'trace']"}},
+        ],
+     ],
+];
+?>

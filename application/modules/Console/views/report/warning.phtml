@@ -1,0 +1,106 @@
+<?php  
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="warning" method="GET" style="margin-bottom:0px"> 
+    <div style="float:left;margin-right:5px;margin-left:850px">
+        <label> 选择起始时间 </label>
+        <input type="text" id="start_date" name="start_date" value="<?php echo @date("Y-m-d",strtotime($date));?>" placeholder="起始时间" >
+    </div>
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left">
+        <button type="submit" class="btn btn-primary"><strong>检索</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">错误记录</a>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>接口名</th>
+                    <th>错误码</th>
+                    <th>报错次数</th>
+                    <th>客户端访问地址</th>
+                    <th>客户端传入的参数</th>
+                </tr>
+              </thead>
+              <tbody>
+                    <?php foreach ($err_datas as $k=>$v) {
+                            if ($k > 9) {break;}
+                              while (list($a,$b) = @each($v)) {
+                                  while (list($c,$d) = @each($b)) {
+                    ?>
+                    <tr>
+                        <td><?php echo $date?></td>
+                        <td><?php echo $a?></td>
+                        <td><?php echo $c?></td>
+                        <td><?php echo $d['num']?></td>
+                        <td><?php echo $d['referer']?></td>
+                        <td>
+                            <a href="javascript:void(0);" onclick="detail(this)">详情</a>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <div class="detail"><?php var_dump($d['params']);?></div>
+                        </td>
+                    </tr>
+                    <?php }}}?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php //echo $page_html;?>
+                <!--- END --->
+        </div>
+    </div>
+
+<script>
+$(function() {
+	$('div.detail').parents('tr').hide();
+})
+function detail(obj) {
+	$(obj).parents('tr').next().toggle();
+}
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	$('select').change(function(){
+		var start_date=$('#start_date').val();
+        var end_date=$('#end_date').val();
+        var classify=$(this).val();
+        $.ajax({
+            'type':'post',
+            'url':'addActive',
+            'data':{'start_date':start_date,
+                    'end_date':end_date,
+                    'classify':classify},
+            'success':function(e){
+                    $('#sum').val(e);
+                }
+            },'json')
+	})
+    
+})
+</script>
+	
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

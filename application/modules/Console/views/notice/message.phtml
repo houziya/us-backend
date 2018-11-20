@@ -1,0 +1,25 @@
+<?php include(dirname(__DIR__).'/header.phtml');?>
+  <body class="simple_body">
+    <div class="navbar">
+        <div class="navbar-inner">
+                <ul class="nav pull-right">
+                </ul>
+                <a class="brand" href="<?php echo Console\ADMIN_URL;?>Console/User/index"><span class="first"></span> <span class="second"><?php echo Console\COMPANY_NAME;?></span></a>
+        </div>
+    </div>
+<div>
+<div class="container-fluid">	
+        <div class="row-fluid">
+            <div class="http-error">
+                <?php if ($type =="success") { ?>
+                <h1>Yep!</h1>
+                <?php } elseif ($type == "error") { ?>
+                <h1>Oops!</h1>
+                <?php }else { ?>
+                <h1>O~!</h1>
+                <?php }?>
+                <p class="info"><?php echo $message_detail;?></p>
+                <h2>返回 <a href = "<?php echo Console\ADMIN_URL.$forward_url;?>"><?php echo $forward_title;?></a></h2>
+            </div>
+        <div>
+<?php include(dirname(__DIR__).'/footer.phtml');?>

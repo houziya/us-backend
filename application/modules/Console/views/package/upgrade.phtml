@@ -1,0 +1,184 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<style type="text/css">
+*{margin:0 auto;padding:0;list-style-type:none;}
+/* tab */
+#tab .tab_menu{width:100%;position:absolute;z-index:1;}
+#tab .tab_menu li{width:92px;line-height:30px;border:1px solid #ccc;border-bottom:0px;cursor:pointer;}
+#tab .tab_box{top:30px;position:relative;}
+#tab .tab_menu .selected{cursor:pointer;}
+.hide{display:none;}
+</style>
+<div class="well">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">请填写安装包升级资料</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+    <ul class="tab_menu">
+        <li class="selected btn btn-primary">ios</li>
+        <li class="btn btn-primary">android</li>
+        <li class="btn btn-danger" id="edit" >编辑</li>
+    </ul>
+    <div class="tab_box">
+        <div id="list">
+        <?php
+            if(!empty($iosList)) {
+        ?>
+            <form id="tab" method="post" action="upgrade" autocomplete="off" enctype="multipart/form-data" onsubmit="return submitFun();">
+                 <label>最新安装包链接地址</label>
+                 <input type="text" name="skip_url" class="input-xlarge disable" required="true" value=<?php echo $newsData[0]['skip_url'];?> disabled ><br/>
+                 <label>升级内容描述</label>
+                 <textarea type="text" name="descs" class="input-xlarge disable" disabled><?php echo $newsData[0]['descs'];?></textarea><br/>
+                 <label>操作时间</label>
+                 <input type="text" name="time" class="input-xlarge" required="true" value='<?php echo $newsData[0]['update_time'];?>'  disabled><br/>
+                 <button type="button" class="btn btn-primary" data-target="#demo" data-toggle="collapse" id="ver_ios" onlick="timedMsg();">升级的版本</button>
+                 <button type="button" class="btn btn-primary" data-target="#demo" id="selectAll">全选</button>
+                 <button type="button" class="btn btn-primary" data-target="#demo" id="severseIos">反选</button>
+                 <i id="tips" style="display:none;width:140px;" class="label label-default" >您所选择的为强制升级版本!</i>
+                 <div id="demo" class="collapse">
+                 <?php
+                 foreach ($iosList as $item) {
+                    if ($newsData[2][0] == 1) {
+                 ?>
+                        <input type="checkbox" name="code_ids[]" class="btn btn-primary disable" value = <?php echo $item;?> checked  disabled> <?php echo $item ?>
+                 <?php
+                    } elseif ($newsData[2][0] == ''){
+                 ?>
+                        <input type="checkbox" name="code_ids[]" class="btn btn-primary disable" value = <?php echo $item;?> disabled> <?php echo $item ?>
+                 <?php
+                    } else {
+                        if (in_array($item, $newsData[2])) {
+                 ?>
+                        <input type="checkbox" name="code_ids[]" class="btn btn-primary disable" value = <?php echo $item;?> checked  disabled> <?php echo $item ?>
+                 <?php
+                        } else {
+                 ?>
+                        <input type="checkbox" name="code_ids[]" class="btn btn-primary disable" value = <?php echo $item;?> disabled> <?php echo $item ?>
+                 <?php
+                         }
+                    }
+                 }
+                 ?>
+                 </div>
+                 <div class="btn-toolbar">
+                    <input type="hidden" value="1" name="platform" >
+                    <a href="pushConfig?id=<?php echo $newsData[0]['id']?>"><button type="submit" class="btn btn-primary" disabled><strong>推送</strong></button></a>
+                 <div class="btn-group"></div>
+            </form>
+        </div>
+        <?php
+            }
+        ?>
+        </div>
+        <div class="hide">
+            <div id="list2">
+            <?php
+                if (!empty($andList)) {
+            ?>
+            <form id="tab" method="post" action="" autocomplete="off" enctype="multipart/form-data">
+                <label>最新安装包链接地址</label>
+                <input type="text" name="skip_url" class="input-xlarge disable" required="true" value=<?php echo $newsData[1]['skip_url']; ?> disabled ><br/>
+                <label>升级内容描述</label>
+                <textarea type="text" name="descs" class="input-xlarge disable" disabled><?php echo $newsData[1]['descs'];?></textarea><br/>
+                <label>操作时间</label>
+                <input type="text" name="time" class="input-xlarge" required="true" value='<?php echo $newsData[1]['update_time'];?>'  disabled><br/>
+                <button type="button" class="btn btn-primary" data-target="#and" data-toggle="collapse" id="ver_and" >升级的版本</button>
+                <button type="button" class="btn btn-primary" data-target="#and" id="select">全选</button>
+                <button type="button" class="btn btn-primary" data-target="#demo" id="severseAnd">反选</button>
+                <i id="tip" style="display:none;width:140px;" class="label label-primary" >您所选择的为强制升级版本!</i>
+                <div id="and" class="collapse">
+                <?php
+                foreach ($andList as $item) {
+                    if ($newsData[3][0] == '1') {
+                ?>
+                    <input type="checkbox" name="code_ids[]" class="btn btn-primary disable" value = <?php echo $item;?> checked  disabled> <?php echo $item ?>
+                <?php
+                    } elseif ($newsData[3][0] == ''){
+                ?>
+                    <input type="checkbox" name="code_ids[]" class="btn btn-primary disable" value = <?php echo $item;?> disabled> <?php echo $item ?>
+                <?php               
+                    } else {
+                        if (in_array($item, $newsData[3])) {
+                ?>
+                    <input type="checkbox" name="code_ids[]" class="btn btn-primary disable" value = <?php echo $item;?> checked  disabled> <?php echo $item ?>
+                <?php
+                    } else {
+                ?>
+                        <input type="checkbox" name="code_ids[]" class="btn btn-primary disable" value = <?php echo $item;?> disabled> <?php echo $item ?>
+                <?php
+                         }
+                    }
+                }
+                ?>
+                </div>
+                <div class="btn-toolbar">
+                    <input type="hidden" value="0" name="platform" >
+                    <a href="pushAndroidConfig?id=<?php echo $newsData[1]['id']?>"><button type="submit" class="btn btn-primary"><strong>推送</strong></button></a>
+                <div class="btn-group"></div>
+            </form>
+        </div>
+        <?php
+            }
+        ?>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var $tab_li = $('.tab-content ul li');
+        $tab_li.click(function(){
+        $(this).addClass('selected').siblings().removeClass('selected');
+        var index = $tab_li.index(this);
+        $('div.tab_box > div').eq(index).show().siblings().hide();
+    });
+  });
+</script>
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+           $("#ver_ios").click(function(){
+                $("#tips").css("display","inline");
+           });
+           $("#ver_and").click(function(){
+                $("#tip").css("display","inline");
+           });
+           $("#selectAll").click(function () {
+                $("#list :checkbox").attr("checked", true);
+           });
+           $("#select").click(function () {
+                $("#list2 :checkbox").attr("checked", true);
+           });
+           $("#edit").click(function(){
+                $(".disable").attr("disabled",false);
+                $('button[type="submit"]').attr("disabled",false);
+           });
+           $("#severseIos").click(function () {
+                $("#list :checkbox").each(function () {
+                        $(this).attr("checked", !$(this).attr("checked"));
+                }); 
+           });
+           $("#severseAnd").click(function () {
+                $("#list2 :checkbox").each(function (){
+                    $(this).attr("checked", !$(this).attr("checked"));
+                }); 
+           });
+    });
+    </script>
+</head>
+
+<body>
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

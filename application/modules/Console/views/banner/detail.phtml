@@ -1,0 +1,62 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>    
+<div class="well">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">Banner图资料</a></li>
+    </ul>
+    <div class="btn-toolbar">
+        <button id="ios" class="btn btn-primary" style="width:78px">ios</button>
+    </div>
+    <div id="myTabContent2" class="tab-content">
+        <div class="tab-pane active in" id="home">
+            <form id="tab2" method="post" action="detail" autocomplete="off" enctype="multipart/form-data">
+                <span>ios4:</span>
+                <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $img['images']['ios4']?>.jpg" style="width:60px;height:60px;object-fit:cover" >
+                <span>ios5:</span>
+                <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $img['images']['ios5']?>.jpg" style="width:60px;height:60px;object-fit:cover" >
+                <span>ios6:</span>
+                <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $img['images']['ios6']?>.jpg" style="width:60px;height:60px;object-fit:cover" >
+                <span>ios6s:</span>
+                <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $img['images']['ios6s']?>.jpg" style="width:60px;height:60px;object-fit:cover" >
+                <br><br>
+                <span>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题:</span>
+                <span><?php echo $img['title']?></span>
+                <br><br>
+                <span>创建时间:</span>
+                <span><?php echo $img['create_time']?></span>
+                <br><br>
+                <span>平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;台:</span>
+                <span>
+                    <?php if ($img['platform'] == 1) { echo 'ios';} else { echo 'android';}?>
+                </span>
+                <br><br>
+                <span>跳转地址:</span>
+                <span><?php echo $img['skip_url']?></span>
+                <br><br>
+                <span>选择类型:</span>
+                <span>
+                    <?php if ($img['action_type'] == 1) {echo 'Web';}?>
+                    <?php if ($img['action_type'] == 2) {echo '现场';}?>
+                </span>
+                <br><br>
+                <span>版&nbsp;本&nbsp;&nbsp;码:</span>
+                <?php foreach ($package_datas as $package_data) {
+                        if ($package_data['platform'] == 1) {
+                ?>
+                <?php foreach ($img['code'] as $v) {if ($v == $package_data['code']) {echo $package_data['code'].',';}}?>
+                <?php }}?>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

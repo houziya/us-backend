@@ -1,0 +1,90 @@
+<?php 
+setcookie('complete_url',$_SERVER["QUERY_STRING"],0);
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="events" method="GET" style="margin-bottom:0px">
+    <div style="float:left;margin-left:280px">
+        <label>&nbsp;</label>
+        <input type="text" name="event_id" value="<?php echo @$_GET['event_id'];?>" placeholder="活动ID" onkeyup='this.value=this.value.replace(/\D/gi,"")'>
+    </div>
+    <div style="float:left;margin-left:5px">
+        <label>&nbsp;</label>
+        <input type="text" name="name" value="<?php echo @$_GET['name'];?>" placeholder="活动昵称" >
+    </div>
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left;margin-left:5px">
+        <button type="submit" class="btn btn-primary"><strong>检索活动</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">活动列表</a>
+        <div id="page-stats" class="block-body collapse in">
+            <?php foreach ($events as $event) {?>
+            <div style="float:left">
+                
+                <ul style="float:left;margin-left:320px;margin-top:30px;list-style:none;width:230px">
+                    <li>活动ID:<?php echo $event['id']?><a style="margin-left: 12px;" href="appendPicture?eventId=<?php echo $event['id'];?>">&lt;上传活动照片&gt;</a></li>
+                    <li style="margin-top:8px">活动标题:<?php echo @$event['name']?></li>
+                    <!-- <li style="margin-top:8px">活动地点:<?php ?></li>-->
+                    <li style="margin-top:8px">创建者:<a href="javascript:void(0);" style="color:gray" onclick="window.location.href='/Console/Quser/users?uid=<?php echo $event['uid']?>'"><?php echo $event['nickname']?></a></li>
+                    <li style="margin-top:8px">参与活动人数:<?php echo @$event['count_users']?></li>
+                    <li style="margin-top:8px">参与活动人员:<?php  if (isset($event['members'])) {foreach (@$event['members'] as $member){?>
+                        <a href="javascript:void(0);" style="color:gray;" onclick="window.location.href='/Console/Quser/users?uid=<?php echo @$member[1]?>'"><?php echo @$member[0].','?></a>
+                    <?php }} else { echo '<span style="color:blue">数据异常等待处理</span>';}?>
+                    </li>
+                </ul>
+                <ul style="float:left;margin-top:30px;list-style:none;width:300px">
+                    <li>活动创建时间:<?php echo @$event['create_time']?></li>
+                    <li style="margin-top:8px">活动开始时间:<?php echo @$event['start_time']?></li>
+                    <li style="margin-top:8px">活动曝光次数:<?php echo @$event['exposure']?></li>
+                    <li style="margin-top:8px">照片总数:<?php echo @$event['count_pictures']?></li>
+                    <!--<li style="margin-top:8px">分享次数:</li>
+                    <li style="margin-top:8px">曝光次数:</li>
+                    <li style="margin-top:8px">曝光排名:</li>-->
+                </ul>
+                
+            </div>
+            <div>
+                <ul style="float:left;margin-left:360px;margin-top:10px;list-style:none">
+                    <li>
+                        <a href="eventDetail?eventId=<?php echo $event['id']; ?>"><img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN; ?>/event/coverpage/<?php echo $event['cover_page']?>.jpg" style="width:280px;height:360px;object-fit:cover"></a>
+                    </li>
+                    <li style="float:left;margin-top:10px"><button class="btn btn-primary">删除</button></li>
+                    <li style="float:left;margin-top:10px;margin-left:165px"><button class="btn btn-primary">分享</button></li>
+                </ul>
+            </div>
+            <?php }?>
+                <!--- START 分页模板 --->
+                    
+                <!--- END --->
+        </div>
+        <?php echo $page_html;?>
+    </div>
+    
+    <script type="text/javascript">
+        $(function(){
+        	$('div.pagination').css('margin-left','320px');
+        })
+    </script>
+
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php echo @$osadmin_action_confirm;?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php 
+include(dirname(__DIR__)."/footer.phtml");
+?>
+

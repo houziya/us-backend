@@ -1,0 +1,87 @@
+<?php
+include (dirname(__DIR__) . '/header.phtml');
+include (dirname(__DIR__) . "/menu/navibar.phtml");
+include (dirname(__DIR__) . "/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div class="btn-toolbar">
+    <a href="subSponsorsAdd?cid=<?php echo $_GET['cid']; ?>" class="btn btn-primary"><i class="icon-plus"></i> 分渠道</a>
+     <a data-toggle="collapse" data-target="#search" href="#"  title= "检索"><button class="btn btn-primary" style="margin-left:5px"><i class="icon-search"></i></button></a>
+</div>
+<div id="search" class="collapse out">
+<form class="form_search"  method="GET" style="margin-bottom:0px" action="subSponsors">
+    <div style="float:left;margin-right:5px">
+        <label>查询渠道商 <i class="label label-important"> 通过ID查询</i></label>
+        <input type="text" name="subId" > 
+        <input type="hidden" name="search" value="1" class="input-medium search-query">
+        <input type="hidden" name="method" value="link" />
+        <input type="hidden" name="cid" value="<?php echo $_GET['cid']; ?>" />
+    </div>
+    <div class="btn-toolbar" style="padding-top:25px;padding-bottom:0px;margin-bottom:0px">
+        <button type="submit" class="btn btn-primary">检索</button>
+    </div>
+    <div style="clear:both;"></div>
+</form>
+</div>
+<div class="block">
+	<a href="#page-stats" class="block-heading" data-toggle="collapse">分渠道商列表</a>
+	<div id="page-stats" class="block-body collapse in">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th style="width: 20px">#</th>
+					<th style="width: 80px">主渠道名称</th>
+					<th style="width: 80px">渠道平台</th>
+					<th style="width: 100px">分渠道名称</th>
+					<th style="width: 100px">渠道号</th>
+					<th style="width: 80px">扣量比例</th>
+					<th style="width: 80px">结算单价</th>
+					<th style="width: 80px">擦作</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			<?php
+			if (isset($subchannellist) && !empty($subchannellist)) {
+    			foreach ($subchannellist as $key => $val)
+    			{
+    	    ?>
+    				<tr>
+    				<td><?php echo $val['id']; ?></td>
+    				<td><?php echo $val['main_channel_name']; ?></td>
+    				<td><?php echo $val['platform'] == 1 ? 'Android' : 'iOS'; ?></td>
+    				<td><?php echo $val['sub_channel_name']?></td>
+    				<td><?php echo $val['channel_code']?></td>
+    				<td><?php echo $val['proportion']?></td>
+    				<td><?php echo $val['unitPrice']?></td>
+    				<td>
+                        <a href="subSponsorsAddress?method=link&cid=<?php echo $_GET['cid'];?>&id=<?php echo $val['id']; ?>" title= "分渠道详情信息" ><i class="icon-list-alt"></i></a>
+                   		&nbsp;
+                        <a href="subSponsorsModify?method=mod&cid=<?php echo $_GET['cid'];?>&id=<?php echo $val['id']; ?>" title= "修改" ><i class="icon-pencil"></i></a>
+                        &nbsp;
+                        <a title= "删除" data-toggle="modal"  href="#myModal"><i class="icon-remove" href="subSponsors?medium=del&method=link&cid=<?php echo $_GET['cid'];?>&id=<?php echo $val['id']; ?>"></i></a>
+                        </td>
+    			    </tr>
+    		<?php 
+    			}
+			}	
+    		?>
+			</tbody>
+		</table>
+		<!--- START 分页模板 --->
+
+
+
+		<!--- END --->
+	</div>
+</div>
+<?php echo @$pageHtml; ?>
+<?php echo $confirm; ?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>  

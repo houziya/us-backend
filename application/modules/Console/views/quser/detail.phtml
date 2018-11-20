@@ -1,0 +1,69 @@
+<?php
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<!--<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="detail" method="GET" style="margin-bottom:0px">
+    <input type="hidden" name="member_uid" value="<?php //echo @$_GET['member_uid']?>">
+    <div style="float:left;margin-left:390px">
+        <label>&nbsp;</label>
+        <input type="text" name="name" value="<?php //echo @$_GET['name'];?>" placeholder="活动名称" >
+    </div>
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left;margin-left:5px">
+        <button type="submit" class="btn btn-primary"><strong>检索活动</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+-->
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">账号列表</a>
+        <div id="page-stats" class="block-body collapse in">
+            <div style="float:left">
+                <?php foreach ($events as $event) {?>
+                <ul style="float:left;margin-left:80px;margin-top:30px;list-style:none;width:250px">
+                    <li>
+                        <?php if ($event['uid'] == @$_GET['member_uid']) {echo '创建us.'.mb_substr($event['name'],0,6,'utf-8').'活动'.',上传'.$event['my_count_picture'].'/'.$event['count_picture'].'张图';
+                        } else {echo '参与us.'.mb_substr($event['name'],0,6,'utf-8').'活动'.',上传'.$event['my_count_picture'].'/'.$event['count_picture'].'张图';}
+                        ?>
+                    </li>
+                    <li style="margin-top:8px"><?php if (!empty($event['create_time'])) {echo $event['create_time'];} else { echo '无';}?>&nbsp;&nbsp;&nbsp;活动ID:<a href="javascript:void(0);" style="color:blue;" onclick="window.location.href='/Console/Event/events?event_id=<?php echo $event['event_id']?>'"><?php echo $event['event_id']?></a></li>
+                    <li style="margin-top:8px">
+                                                                      分享次数:<span style="color:blue">暂不支持</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;曝光次数:<?php echo @$event['exposure']?>
+                    </li>
+                    <li style="margin-top:8px">
+                        <a href="javascript:void(0);" onclick="window.location.href='/Console/Event/eventDetail?eventId=<?php echo $event['event_id']?>'"><img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/event/coverpage/<?php echo $event['cover_page']?>.jpg" style="width:250px;height:80px;object-fit:cover"></a>
+                    </li>
+                    <li style="margin-top:8px"><a href="detail?event_id=<?php echo $event['event_id']?>&method=mod#myModal"><button class="btn btn-primary dj" href="detail?event_id=<?php echo $event['event_id']?>&method=mod#myModal" data-toggle="modal">删除</button></a></li>
+                </ul>
+                <?php }?>
+            </div>
+                <!--- START 分页模板 --->
+                    
+                <!--- END --->
+        </div>
+        <?php echo $page_html;?>
+    </div>
+    
+    <script type="text/javascript">
+        $(function(){
+        	$('div.pagination').css('margin-left','95px');
+        })
+        
+    </script>
+
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php echo @$osadmin_action_confirm;?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php 
+include(dirname(__DIR__)."/footer.phtml");
+?>
+

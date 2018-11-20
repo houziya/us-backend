@@ -1,0 +1,50 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- TPLSTART 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+<?php
+ echo @$osadmin_action_alert;
+ echo @$osadmin_quick_note;
+?>
+<select name="group_id" onchange="javascript:location.replace('role?group_id='+this.options[this.selectedIndex].value)" style="margin:5px 0px 0px">
+    <?php foreach ($group_option_list as $key => $option) {?>
+        <option <?php if ($key == $group_id) {echo "selected";}?> value="<?php echo $key;?>"> <?php echo $option;?></option>
+    <?php }?>
+</select>
+<form method="post" action="">
+<?php 
+foreach ($role_list as $role) {
+    if(array_key_exists('menu_info', $role)) {
+        if (count($role['menu_info']) > 0) {
+?>
+        <div class="block">
+            <a href="#page-stats_<?php echo $role['module_id'];?>" class="block-heading" data-toggle="collapse"><?php echo $role['module_name']?></a>
+            <div id="page-stats_<?php echo $role['module_id'];?>" class="block-body collapse in">
+            <?php foreach ($role['menu_info'] as $menu_id => $menu) {?>
+            <input type="checkbox" name="menu_ids[]" value="<?php echo $menu_id;?>" <?php if (in_array($menu_id, $group_role)){echo "checked";}?>>
+            <?php echo $menu;?>&nbsp;&nbsp;
+            <?php }?>
+            </div>
+        </div>
+<?php 
+        }
+    } else {
+
+?>
+    <div class="block">
+            <a href="#page-stats_<?php echo $role['module_id'];?>" class="block-heading" data-toggle="collapse"><?php echo $role['module_name']?></a>
+            <div id="page-stats_<?php echo $role['module_id'];?>" class="block-body collapse in">
+            </div>
+    </div>
+<?php 
+    }
+}
+?>
+    <div>
+        <button class="btn btn-primary">更新</button>
+    </div>
+</form>
+<!-- TPLEND 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include(dirname(__DIR__).'/footer.phtml');?>

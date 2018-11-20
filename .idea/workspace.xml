@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fea4d260-554c-4b9c-a453-4bfbde479233" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\xampp\htdocs\us-backend\vendor\bin\markdown" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\us-backend\vendor\bin\phpunit" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\us-backend\vendor\bin\yii" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/fonts/chancery.ttf" afterPath="$PROJECT_DIR$/res/fonts/chancery.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/fonts/hiragino.otf" afterPath="$PROJECT_DIR$/res/fonts/hiragino.otf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/1.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/2.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/3.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/4.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/AUTHORS.txt" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/AUTHORS.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery/AUTHORS.txt" afterPath="$PROJECT_DIR$/vendor/bower/jquery/AUTHORS.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/library/Accessor.php" afterPath="$PROJECT_DIR$/application/library/Accessor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/AppendMultiline.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/AppendMultiline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/commands/AsyncPushMessage.php" afterPath="$PROJECT_DIR$/application/commands/AsyncPushMessage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/BankAccount-text.txt" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/BankAccount-text.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForBankAccount/BankAccount.php.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForBankAccount/BankAccount.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/Bootstrap.php" afterPath="$PROJECT_DIR$/application/Bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AllowHostnameUnderscore.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AllowHostnameUnderscore.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DisableExcludes.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DisableExcludes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Language.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Language.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/DISCLAIMER.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/benchmarks/samples/Lexer/DISCLAIMER.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/Default.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/Default.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Directive.Allowed.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Directive.Allowed.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Directive.Deprecated.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Directive.Deprecated.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Directive.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Directive.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeScripting.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeScripting.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/library/I18N.php" afterPath="$PROJECT_DIR$/application/library/I18N.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/plugins/Instrumentation.php" afterPath="$PROJECT_DIR$/application/plugins/Instrumentation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/punycode/LICENSE-MIT.txt" afterPath="$PROJECT_DIR$/vendor/bower-asset/punycode/LICENSE-MIT.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/punycode/LICENSE-MIT.txt" afterPath="$PROJECT_DIR$/vendor/bower/punycode/LICENSE-MIT.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery/LICENSE.txt" afterPath="$PROJECT_DIR$/vendor/bower/jquery/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/MIT-LICENSE.txt" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/MIT-LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/Multi.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/Multi.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/i18n/Notice.en" afterPath="$PROJECT_DIR$/application/i18n/Notice.en" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/library/Notice.php" afterPath="$PROJECT_DIR$/application/library/Notice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/i18n/Notice.zh" afterPath="$PROJECT_DIR$/application/i18n/Notice.zh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/OverrideSingle.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/OverrideSingle.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/library/Preconditions.php" afterPath="$PROJECT_DIR$/application/library/Preconditions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/library/Predicates.php" afterPath="$PROJECT_DIR$/application/library/Predicates.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/library/Protocol.php" afterPath="$PROJECT_DIR$/application/library/Protocol.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/README" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/Injector/RemoveSpansWithoutAttributesTest.php" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/Injector/RemoveSpansWithoutAttributesTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/library/Session.php" afterPath="$PROJECT_DIR$/application/library/Session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/library/Sharding.php" afterPath="$PROJECT_DIR$/application/library/Sharding.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/Simple.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/tests/HTMLPurifier/StringHashParser/Simple.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/plugins/Trace.php" afterPath="$PROJECT_DIR$/application/plugins/Trace.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.bool.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.bool.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.float.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.float.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.hash.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.hash.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.int.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.int.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.istring.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.istring.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.itext.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.itext.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.list.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.list.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.lookup.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.lookup.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.mixed.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.mixed.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.nullbool.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.nullbool.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.nullstring.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.nullstring.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.string.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.string.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.text.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.text.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/test-schema/Type.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/library/Types.php" afterPath="$PROJECT_DIR$/application/library/Types.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Base.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Base.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Host.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Host.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/Us/controllers/User.php" afterPath="$PROJECT_DIR$/application/modules/Us/controllers/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gearman/Worker.php" afterPath="$PROJECT_DIR$/gearman/Worker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/about.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/about.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/absolute.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/absolute.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/accessibility.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/accessibility.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/ads.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/ads.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/affix-with-sticky-footer.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/affix-with-sticky-footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/affix.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/affix.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/affix.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/affix.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/agreement.html" afterPath="$PROJECT_DIR$/public/agreement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/alert.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/alert.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/alerts.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/alerts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/alerts.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/alerts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/core/aliased.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/core/aliased.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/basic/allElements.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/basic/allElements.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.ini.sample" afterPath="$PROJECT_DIR$/conf/application.ini.sample" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/badges.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/badges.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/php-amqplib/php-amqplib/bin/ci/before_build.sh" afterPath="$PROJECT_DIR$/vendor/php-amqplib/php-amqplib/bin/ci/before_build.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/blockquote-nested.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/blockquote-nested.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/blockquote.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/blockquote.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/body.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/body.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/support/bodyBackground.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/support/bodyBackground.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/breadcrumbs.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/breadcrumbs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/browser-bugs.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/browser-bugs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/browser-device-support.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/browser-device-support.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/button-dropdowns.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/button-dropdowns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/button-groups.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/button-groups.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/button.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/button.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/buttons.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/buttons.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/carousel.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/carousel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/carousel.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/carousel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/core/cc_on.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/core/cc_on.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/class-with-anonymous-function-text.txt" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/class-with-anonymous-function-text.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/cleanScript.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/cleanScript.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/code.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/code.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/code.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/code.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/collapse.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/collapse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/collapse.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/collapse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/community.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/community.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/compile-doxygen.sh" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/compile-doxygen.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/components.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/components.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/components.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/components.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/css.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/css.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/css.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/css.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/css/cssWidthBeforeDocReady.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/css/cssWidthBeforeDocReady.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/customize.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/customize.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/customize.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/customize.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/customizer-variables.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/customizer-variables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForBankAccount/dashboard.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForBankAccount/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForClassWithAnonymousFunction/dashboard.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForClassWithAnonymousFunction/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForFileWithIgnoredLines/dashboard.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForFileWithIgnoredLines/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/data/dataAttrs.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/data/dataAttrs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/db.php.sample" afterPath="$PROJECT_DIR$/conf/db.php.sample" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_layouts/default.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_layouts/default.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/del.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/del.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/delegatetest.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/delegatetest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/dense-block-markers.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/dense-block-markers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/dense-block-markers.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/dense-block-markers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/dense-block-markers2.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/dense-block-markers2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-advanced-api.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-advanced-api.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-code-quality.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-code-quality.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-config-bcbreaks.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-config-bcbreaks.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-config-naming.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-config-naming.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-config-schema.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-config-schema.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-flush.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-flush.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-includes.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-includes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-naming.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-naming.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-optimization.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-optimization.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-progress.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/dev-progress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/disabling-responsiveness.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/disabling-responsiveness.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/dimensions/documentLarge.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/dimensions/documentLarge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/download.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/download.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/dropdown.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/dropdown.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/dropdowns.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/dropdowns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/dropdowns.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/dropdowns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/core/dynamic_ready.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/core/dynamic_ready.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/emphasis.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/emphasis.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/empty-line.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/empty-line.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/endless_loop_bug.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/endless_loop_bug.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-customize.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-customize.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-id.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-id.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-overview.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-overview.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-security.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-security.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-slow.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-slow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-tidy.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-tidy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-uri-filter.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-uri-filter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-utf8.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-utf8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-youtube.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/enduser-youtube.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/escape-in-link.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/escape-in-link.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/examples.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/examples.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/expectedFileFormat.txt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/expectedFileFormat.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/extra-data/fenced-code.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/extra-data/fenced-code.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/fixed.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/fixed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/flush-definition-cache.php" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/flush-definition-cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/focusElem.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/focusElem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/focusinCrossFrame.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/focusinCrossFrame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/footer.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/forms.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/forms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/generate-entity-file.php" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/generate-entity-file.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/generate-standalone.php" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/generate-standalone.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/getting-started.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/getting-started.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/getting-started.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/getting-started.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/github-basics.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/github-basics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/github-code-in-numbered-list.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/github-code-in-numbered-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/github-sample.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/github-sample.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/glyphicons.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/glyphicons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/grid.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/grid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/grunt.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/grunt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/header.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/headline.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/headline.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/helpers.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/helpers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_layouts/home.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_layouts/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/hovertest.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/hovertest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/hr.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/hr.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/specimens/html-align-to-css.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/specimens/html-align-to-css.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/html-block.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/html-block.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/selector/html5_selector.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/selector/html5_selector.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/manipulation/iframe-denied.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/manipulation/iframe-denied.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/iframe.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/iframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/ignored-lines-text.txt" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/ignored-lines-text.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/images.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/images.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/images.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/images.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/blog/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/blog/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/carousel/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/carousel/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/cover/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/cover/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/dashboard/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/dashboard/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/grid/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/grid/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/jumbotron/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/jumbotron/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/jumbotron-narrow/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/jumbotron-narrow/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/justified-nav/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/justified-nav/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/navbar/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/navbar/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/navbar-fixed-top/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/navbar-fixed-top/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/navbar-static-top/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/navbar-static-top/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/non-responsive/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/non-responsive/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/offcanvas/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/offcanvas/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/signin/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/signin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/starter-template/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/starter-template/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/sticky-footer/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/sticky-footer/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/sticky-footer-navbar/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/sticky-footer-navbar/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/theme/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/theme/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/tooltip-viewport/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/examples/tooltip-viewport/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/src/sizzle/test/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/src/sizzle/test/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/punycode/tests/index.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/punycode/tests/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/index.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForBankAccount/index.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForBankAccount/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForClassWithAnonymousFunction/index.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForClassWithAnonymousFunction/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForFileWithIgnoredLines/index.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForFileWithIgnoredLines/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/plugins/phorum/info.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/plugins/phorum/info.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/inline-html.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/inline-html.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/innerHTML.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/innerHTML.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/input-groups.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/input-groups.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/issue-33.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/issue-33.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/issue-38.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/issue-38.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/javascript.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/javascript.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/javascript.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/javascript.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/specimens/jochem-blok-word.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/specimens/jochem-blok-word.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js_patch.txt" afterPath="$PROJECT_DIR$/public/js_patch.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/jumbotron.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/jumbotron.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/labels.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/labels.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/lazy-list.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/lazy-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/basic/legacy.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/smoketests/basic/legacy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/less.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/less.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/license.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/license.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/links.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/links.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/list-group.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/list-group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/list-marker-in-paragraph.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/list-marker-in-paragraph.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/list.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-ol-start-num-data/list.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-ol-start-num-data/list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/list_and_reference.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/list_and_reference.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/list_items_with_undefined_ref.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/list_items_with_undefined_ref.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/lists.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/lists.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/localfile.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/localfile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/log.php.sample" afterPath="$PROJECT_DIR$/conf/log.php.sample" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/main.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/bin/markdown" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/bin/markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_amps_and_angle_encoding.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_amps_and_angle_encoding.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_auto_links.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_auto_links.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_backslash_escapes.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_backslash_escapes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_blockquotes_with_code_blocks.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_blockquotes_with_code_blocks.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_horizontal_rules.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_horizontal_rules.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_inline_html_avanced.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_inline_html_avanced.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_inline_html_comments.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_inline_html_comments.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_inline_html_simple.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_inline_html_simple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_links_inline_style.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_links_inline_style.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_links_reference_style.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_links_reference_style.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_literal_quotes_in_titles.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_literal_quotes_in_titles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_markdown_documentation_basics.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_markdown_documentation_basics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_nested_blockquotes.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_nested_blockquotes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_ordered_and_unordered_lists.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_ordered_and_unordered_lists.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-ol-start-num-data/md1_ordered_and_unordered_lists.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-ol-start-num-data/md1_ordered_and_unordered_lists.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_strong_and_em_together.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_strong_and_em_together.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_tabs.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_tidyness.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/md1_tidyness.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/media.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/media.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/merge-library.php" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/merge-library.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/migration.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/migration.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/migration.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/nav/migration.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/src/sizzle/test/data/mixed_sort.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/src/sizzle/test/data/mixed_sort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/modal.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/modal.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/plugins/modx.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/plugins/modx.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/name.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/name.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/navbar.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/navbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/navs.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/navs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/nested-lists.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/nested-lists.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/networkerror.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/networkerror.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/newline.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/newline.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/non-tables.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/non-tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/onbeforeunload.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/onbeforeunload.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/core/onready.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/core/onready.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/ajax/onunload.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/ajax/onunload.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/overview.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/overview.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/overview.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/overview.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/page-header.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/page-header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/pagination.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/pagination.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/panels.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/panels.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/paragraph.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/paragraph.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/sebastian/diff/tests/fixtures/patch.txt" afterPath="$PROJECT_DIR$/vendor/sebastian/diff/tests/fixtures/patch.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/sebastian/diff/tests/fixtures/patch2.txt" afterPath="$PROJECT_DIR$/vendor/sebastian/diff/tests/fixtures/patch2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/build/phar-manifest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/build/phar-manifest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/build/phar-version.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/build/phar-version.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/build/bin/phpab" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/build/bin/phpab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/phpunit" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/phpunit" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/popover.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/popover.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/popovers.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/popovers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/progress-bars.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/progress-bars.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/promiseReady.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/promiseReady.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-colors.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-colors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-config.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-config.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-css-extraction.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-css-extraction.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-errors.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-errors.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-filter-levels.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-filter-levels.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-language.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-language.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-new-directives.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-new-directives.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-plists.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/proposal-plists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery.inputmask/qunit/qunit.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery.inputmask/qunit/qunit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/readywait.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/readywait.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/redis.php.sample" afterPath="$PROJECT_DIR$/conf/redis.php.sample" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-content-models.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-content-models.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-css-length.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-css-length.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-devnetwork.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-devnetwork.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-html-modularization.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-html-modularization.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-proprietary-tags.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-proprietary-tags.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-whatwg.txt" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/ref-whatwg.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/references.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/references.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/regenerate-docs.sh" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/maintenance/regenerate-docs.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/relative.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/relative.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/test-infra/requirements.txt" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/test-infra/requirements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/responsive-embed.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/responsive-embed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/responsive-utilities.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/responsive-utilities.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/robots.txt" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/robots.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/sass.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/sass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/scroll.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/scroll.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/scrollspy.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/scrollspy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/scrollspy.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/scrollspy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/selector/sizzle_cache.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/selector/sizzle_cache.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/social-buttons.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/social-buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForClassWithAnonymousFunction/source_with_class_and_anonymous_function.php.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForClassWithAnonymousFunction/source_with_class_and_anonymous_function.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForFileWithIgnoredLines/source_with_ignore.php.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForFileWithIgnoredLines/source_with_ignore.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/extra-data/special-attributes.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/extra-data/special-attributes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/specs.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/specs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/static.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/static.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/syncReady.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/syncReady.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/tab.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/tab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/table.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/offset/table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/tables.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/extra-data/tables.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/extra-data/tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/tables.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/tabs.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/template.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/test.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/test2.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/test2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/test3.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/test3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/extra-data/test_precedence.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/extra-data/test_precedence.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/test_precedence.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/test_precedence.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/test_precedence.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/test_precedence.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/third-party-support.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/third-party-support.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/thumbnails.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/thumbnails.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/tools.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/tools.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/tooltip.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/js/tests/visual/tooltip.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/tooltips.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/tooltips.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/transitions.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/js/transitions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/translations.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/translations.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/triggerunload.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/event/triggerunload.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/type.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/type.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/ua.txt" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/ua.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/unicode.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/unicode.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/ajax/unreleasedXHR.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/jquery/test/data/ajax/unreleasedXHR.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/url.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/github-data/url.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/utf8-do-not-kill-characters.html" afterPath="$PROJECT_DIR$/vendor/cebe/markdown/tests/markdown-data/utf8-do-not-kill-characters.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/wells.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/components/wells.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/whats-included.html" afterPath="$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/getting-started/whats-included.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/specimens/windows-live-mail-desktop-beta.html" afterPath="$PROJECT_DIR$/vendor/ezyang/htmlpurifier/docs/specimens/windows-live-mail-desktop-beta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/yii.bat" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/yii.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/yii.php.sample" afterPath="$PROJECT_DIR$/conf/yii.php.sample" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/yii" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/yii" />
+    </list>
+    <ignored path="us-backend.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="us-backend" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1366" />
+    <option name="height" value="728" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="us-backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="us-backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="us-backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+  </component>
+  <component name="RunManager">
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fea4d260-554c-4b9c-a453-4bfbde479233" name="Default" comment="" />
+      <created>1542701815144</created>
+      <option name="number" value="Default" />
+      <updated>1542701815144</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1366" height="728" extended-state="1" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962963" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>
+

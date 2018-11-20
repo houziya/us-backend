@@ -1,0 +1,64 @@
+<?php 
+include (dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?> 
+<!-- TPLSTART 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+ echo @$osadmin_action_alert;
+ echo @$osadmin_quick_note;
+?>
+<div class="btn-toolbar">
+	<a href="add"  class="btn btn-primary"><i class="icon-plus"></i> Quick Note</a>
+</div>
+<div class="block">
+	<a href="#page-stats" class="block-heading" data-toggle="collapse">Quick Note列表</a>
+	<div id="page-stats" class="block-body collapse in">
+		<table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>所有者</th>
+                <th>内容</th>
+                <th width="80px">操作</th>
+                </tr>
+                </thead>
+            <tbody>  
+            <?php 
+                foreach($quickNotes as $note) {
+            ?>
+                 
+                <tr> 
+                <td><?php echo $note['note_id']; ?></td>
+                <td><?php echo $note['owner_name']; ?></td>
+                <td><?php echo $note['note_content']; ?></td>
+                <td>
+                <?php 
+                    if ($userGroup == 1 || $note['owner_id'] == $currentUserId) {
+                ?>
+                <a href="modify?noteId=<?php echo $note['note_id']; ?>" title= "修改" ><i class="icon-pencil"></i></a>
+                &nbsp;
+                <a data-toggle="modal" href="#myModal"  title= "删除" ><i class="icon-remove" href="list?method=del&noteId=<?php echo $note['note_id']?>#myModal" data-toggle="modal" ></i></a>
+                <?php 
+                    }
+                ?>
+                </td>
+                </tr>
+            <?php 
+                }
+            ?>
+         </tbody>
+        </table>
+            <!--- START 分页模板 --->
+               <?php echo $pageHtml; ?>
+         <!--- END --->
+    </div>
+</div>
+
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php echo $confirm; ?>
+<!-- TPLEND 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php 
+include (dirname(__DIR__).'/footer.phtml');
+?>

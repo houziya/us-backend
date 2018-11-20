@@ -1,0 +1,321 @@
+<?php
+    //日期
+    define('Us\\User\\MINUTE', 60);
+    define('Us\\User\\HOUR', 3600);
+    define('Us\\User\\DAY', 86400);
+    define('Us\\User\\WEEK', 604800);
+    define('Us\\User\\MONTH', 2592000);
+    define('Us\\User\\YEAR', 31536000);
+    //注册来源
+    define('Us\\User\\REGISTER_TYPE_PHONE', 0);
+    define('Us\\User\\REGISTER_TYPE_QQ', 1);
+    define('Us\\User\\REGISTER_TYPE_SINA', 2);
+    define('Us\\User\\REGISTER_TYPE_WECHAT', 3);
+    //注册渠道
+    define('Us\\User\\REGISTER_PLATFORM_IOS', 0);
+    define('Us\\User\\REGISTER_PLATFORM_ANDROID', 1);
+    define('Us\\User\\REGISTER_PLATFORM_H5_IOS', 2);
+    define('Us\\User\\REGISTER_PLATFORM_H5_ANDROID', 3);
+    define('Us\\User\\REGISTER_PLATFORM_H5_OTHERS', 4);
+    //性别
+    define('Us\\User\\REGISTER_GENDER_MALE', 1);
+    define('Us\\User\\REGISTER_GENDER_FEMALE', 0);
+    //帐号状态
+    define('Us\\User\\ACCOUNT_NORMAL', 1);                //正常状态
+    define('Us\\User\\ACCOUNT_UNLINK', 0);                //解绑状态
+    //验证码可验证次数
+    define('Us\\User\\ATTEMPTS_TIMES', 2);
+    //默认头像
+    define('Us\\User\\DEFAULT_AVATAR', 'profile/avatar/default.jpg');
+    //验证码验证 文字提示
+    define('Us\\User\\PHONE_CONTENT', '手机号已注册');
+    define('Us\\User\\USER_NOT_EXIST', '账号不存在');
+    define('Us\\User\\CAPTCHA_CONTENT', '验证码错误');
+    //用户状态
+    define('Us\\User\\STATUS_NORMAL', 0);
+    //发送验证码信息文字
+    define('Us\\User\\CAPTCHA_MESSAGE', 'us验证码:');
+    //密码加密次数
+    define('Us\\User\\ENCRYPT_NUM', 1000);
+    //邀请状态
+    define('Us\\User\\JOIN_OK', 1);
+    define('Us\\User\\HAVE_JOIN', 2);
+    define('Us\\User\\JOIN_FALSE', 3);
+    define('Us\\User\\TOURISTS', 4);
+
+    //微信验证
+    define('Us\\Config\\WECHAT_APPID', {{default .Env.US_PHP_WECHAT_APPID "'wxea7a5f9ccf96e433'"}});
+    define('Us\\Config\\WECHAT_SECRET', {{default .Env.US_PHP_WECHAT_SECRET "'d4624c36b6795d1d99dcf0547af5443d'"}});
+    define('Us\\Config\\WECHAT_TOKEN', {{default .Env.US_PHP_WECHAT_TOKEN "'https://api.weixin.qq.com/sns/oauth2/access_token?'"}});
+    define('Us\\Config\\WECHAT_REFRESH_TOKEN', {{default .Env.US_PHP_WECHAT_REFRESH_TOKEN "'https://api.weixin.qq.com/sns/oauth2/refresh_token?'"}});
+    define('Us\\Config\\WECHAT_USER', {{default .Env.US_PHP_WECHAT_USER "'https://api.weixin.qq.com/sns/userinfo?access_token='"}});
+    define('Us\\Config\\WECHAT_UNIQUE_TOKEN', {{default .Env.US_PHP_WECHAT_UNIQUE_TOKEN "'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&'"}});
+    //页面设置
+    define('Console\\ADMIN\\DEBUG' ,false);
+    define('Console\\ADMIN\\PAGE_SIZE', 25 );
+    define('Console\\ADMIN\\SUCCESS', '操作成功');
+    define('Console\\ADMIN\\ERROR', '操作失败，服务器异常');
+    define('Console\\ADMIN\\BE_PAUSED', '您被封停，请联系管理员');
+    define('Console\\ADMIN\\USER_OR_PWD_WRONG', '用户名或密码错误');
+    define('Console\\ADMIN\\GROUP_NOT_EXIST', '账户组不存在');
+    define('Console\\ADMIN\\NEED_PARAM', '缺少必填项');
+    define('Console\\ADMIN\\NAME_CONFLICT', '名称冲突');
+    define('Console\\ADMIN\\CAN_NOT_DELETE_SYSTEM_MODULE', '不能删除系统模块');
+    define('Console\\ADMIN\\HAVE_MENU', '模块下有菜单，请先删除菜单');
+    define('Console\\ADMIN\\MENU_URL_OR_MENU_NAME_CONFLICT', '模块名或模块地址已存在');
+    define('Console\\ADMIN\\MENU_URL_CONFLICT', '菜单链接地址冲突');
+    define('Console\\ADMIN\\CAN_NOT_DELETE_SYSTEM_MENU', '不能删除系统菜单');
+    define('Console\\ADMIN\\CAN_NOT_DELETE_SHORTCUT_MENU', '不能删除快捷菜单的链接地址');
+    define('Console\\ADMIN\\NOT_MODIFY_SHORTCUT_MENU', '不能修改快捷菜单的链接地址');
+    define('Console\\ADMIN\\CAN_NOT_DO_FOR_SUPER_GROUP', '不能对初始的超级管理员组进行此操作');
+    define('Console\\ADMIN\\HAVE_USER', '账号组被使用，不能删除；若要删除，请先将属于该组的用户划拨到其它账号组');
+    define('Console\\ADMIN\\SUCCESS_NEED_LOGIN', '操作成功，部分功能需要用户重新登录才可使用');
+    define('Console\\ADMIN\\PWD_UPDATE_SUCCESS', '密码修改成功');
+    define('Console\\ADMIN\\OLD_PWD_WRONG', '原密码错误');
+    define('Console\\ADMIN\\MENU_AND_MODULE_NOT_SAME', '您搜索的菜单不存在或不在所选模块下');
+    define('Console\\ADMIN\\MENU_ID_NOT_EXIST', '不存在当前ID的菜单列表');
+    define('Console\\ADMIN\\QUICKNOTE_NOT_OWNER', '没有权限删除当前便签');
+    define('Console\\ADMIN\\SYSMENU_NOT_CAN_MOVE', '系统菜单不能转移到其它模块');
+    define('Console\\ADMIN\\NO_FILES_UPLOAD', '请先上传您要更换的封面图');
+    define('Console\\ADMIN\\DEFAULT_PIC_DEL_FAILED', '默认封面图删除失败!');
+    define('Console\\ADMIN\\PUSH_FAILED', '推送失败!');
+    define('Console\\ADMIN\\UPLOAD_FAILED', '上传新图失败');
+    define('Console\\ADMIN\\EVENT_NO_PICTURE', '该活动下暂无照片哦！');
+    define('Console\\ADMIN\\CHANNEL_DELETE_FAILED', '主渠道删除失败！');
+    define('Console\\ADMIN\\MAIN_CHANNEL_HAVE_SUB_CHANNEL', '主渠道下有分渠道,不允许删除！');
+    define('Console\\ADMIN\\MAIN_CHANNEL_ADD_FAILED', '主渠道添加失败！');
+    define('Console\\ADMIN\\SUB_CHANNEL_ADD_FAILED', '分渠道添加失败！');
+    define('Console\\ADMIN\\SUB_CHANNEL_NAME_CONFILCT', '分渠道名称已存在！');
+    define('Console\\ADMIN\\SUB_CHANNEL_MODIFY_FAILED', '分渠道信息修改失败！');
+    define('Console\\ADMIN\\CHANNEL_STAT_SUM_FAILED', '结算数据有异常！');
+    define('Console\\ADMIN\\PRICE_CAN_NOT_EMPTY', '单价不能为空！');
+    
+    //校验session的类型
+    define('Us\\User\\SESSION_KEY', 0);     //用户session
+    define('Us\\User\\TUBE_SESSION_KEY', 1);    //用户tube-session
+
+    // Configurable constants for deployment
+    //验证码
+    define('Us\\Config\\SMS_PRODUCT_ID', {{default .Env.US_PHP_SMS_PRODUCT_ID "129"}});
+    define('Us\\Config\\SMS_TEMPLATE_ID', {{default .Env.US_PHP_SMS_TEMPLATE_ID "75"}});
+    define('Us\\Config\\SMS_PRODUCT_KEY', {{default .Env.US_PHP_SMS_PRODUCT_KEY "'15iVYeKg377D59d0'"}});
+    define('Us\\Config\\SMS_URL', {{default .Env.US_PHP_SMS_URL "'http://access.hoolai.com/message_service/messageService/sendSms.hl?'"}});
+
+    //配置
+    define('Us\\Config\\UPLOAD_DOMAIN', {{default .Env.US_PHP_UPLOAD_DOMAIN "'app.himoca.com:9990'"}});    //上传域名
+    define('Us\\Config\\DOWNLOAD_DOMAIN', {{default .Env.US_PHP_DOWNLOAD_DOMAIN "'uspic-10006628.file.myqcloud.com'"}});    //下载图片域名
+    define('Us\\Config\\INIT_DOMAIN', {{default .Env.US_PHP_INIT_DOMAIN "'app.himoca.com:9990'"}});    //默认域名
+    define('Us\\Config\\SPREAD_DOMAIN', {{default .Env.US_PHP_SPREAD_DOMAIN "'119.29.44.245:7236'"}});    //订阅域名
+    define('Us\\Config\\TUBE_DOMAIN', {{default .Env.US_PHP_TUBE_DOMAIN "'119.29.44.245:7237'"}});    //spread/tube域名 队列
+    define('Us\\Config\\LOG_LEVEL', {{default .Env.US_PHP_LOG_LEVEL "4"}});    //日志级别
+    define('Us\\Config\\FLAG', {{default .Env.US_PHP_FLAG "1"}});
+    define('Us\\Config\\ZK', {{default .Env.US_PHP_ZOOKEEPER "'10.221.145.45:2181,10.232.48.188:2181,10.143.76.120:2181/us-devel'"}});    //zk
+    define('Us\\Config\\SHARE_LINK_PREFIX', {{default .Env.US_PHP_SHARE_LINK_PREFIX "'http://app.himoca.com/share/share.html?target=share&invitation_code='"}});
+    define('Us\\Config\\LIMIT_SIGN', {{default .Env.US_PHP_LIMIT_SIGN "128"}});
+    define('Us\\Config\\IOS_CURRENT_VERSION', {{default .Env.US_PHP_IOS_CURRENT_VERSION "3"}});
+    define('Us\\Config\\LIMIT_EVENT', {{default .Env.US_PHP_LIMIT_EVENT "50"}});
+    define('Us\\Config\\AVATAR_NODE', {{default .Env.US_PHP_AVATAR_NODE "'profile.avatar'"}});
+    define('Us\\Config\\MIPUSH_NODE', {{default .Env.US_PHP_MIPUSH_NODE "'push.mi'"}});
+
+    //统计路径
+    define('Us\\Path\\WRITE_CLIENT_LOG', {{default .Env.US_PHP_WRITE_CLIENT_LOG "'/usr/local/nginx/logs/stat/'"}});    //日志写入路径
+    define('Us\\Path\\READ_LOG', {{default .Env.US_PHP_READ_LOG "'/usr/local/nginx/flume/'"}});    //日志读取路径
+
+    //ios审核配置
+    define('Us\\Config\\REVIEW_UPLOAD_DOMAIN', {{default .Env.US_PHP_REVIEW_UPLOAD_DOMAIN "'app.himoca.com:9990'"}});    //上传域名
+    define('Us\\Config\\REVIEW_DOWNLOAD_DOMAIN', {{default .Env.US_PHP_REVIEW_DOWNLOAD_DOMAIN "'uspic-10006628.file.myqcloud.com'"}});    //下载图片域名
+    define('Us\\Config\\REVIEW_INIT_DOMAIN', {{default .Env.US_PHP_REVIEW_INIT_DOMAIN "'app.himoca.com:9990'"}});    //默认域名
+    define('Us\\Config\\REVIEW_SPREAD_DOMAIN', {{default .Env.US_PHP_REVIEW_SPREAD_DOMAIN "'119.29.44.245:7236'"}});    //订阅域名
+    define('Us\\Config\\REVIEW_TUBE_DOMAIN', {{default .Env.US_PHP_REVIEW_TUBE_DOMAIN "'119.29.44.245:7237'"}});    //spread/tube域名 队列
+    define('Us\\Config\\REVIEW_FLAG', {{default .Env.US_PHP_REVIEW_FLAG "1"}});
+    define('Us\\Config\\REVIEW_LOG_LEVEL', {{default .Env.US_PHP_REVIEW_LOG_LEVEL "4"}});    //日志级别
+
+    // Cache
+    define('Us\\Config\\Cache\\CLASSNAME', {{default .Env.US_PHP_CACHE_CLASSNAME "'yii\\redis\\Cache'"}});
+    define('Us\\Config\\Cache\\HOSTNAME', {{default .Env.US_PHP_CACHE_HOSTNAME "'10.66.83.117'"}});
+    define('Us\\Config\\Cache\\PORT', {{default .Env.US_PHP_CACHE_PORT "6379"}});
+    define('Us\\Config\\Cache\\PASSWORD', {{default .Env.US_PHP_CACHE_PASSWORD "'5821ecac-9143-4b29-8d98-f95177733bb8:88788D2E'"}});
+
+    //脚本内存限制
+    define('Us\\Config\\MEMORY_LIMIT', {{default .Env.US_PHP_MEMORY_LIMIT "'512M'"}});
+
+    // 数据库
+    define('Us\\Config\\Database\\CLASSNAME', {{default .Env.US_PHP_DATABASE_CLASSNAME "'yii\\db\\Connection'"}});
+    define('Us\\Config\\Database\\DBNAME', {{default .Env.US_PHP_DATABASE_DBNAME "'us'"}});
+    define('Us\\Config\\Database\\HOSTNAME', {{default .Env.US_PHP_DATABASE_HOSTNAME "'10.66.111.163'"}});
+    define('Us\\Config\\Database\\PORT', {{default .Env.US_PHP_DATABASE_PORT "3306"}});
+    define('Us\\Config\\Database\\DSN', 'mysql:host=' . Us\Config\Database\HOSTNAME . ';port=' . Us\Config\Database\PORT . ';dbname=' . Us\Config\Database\DBNAME);
+    define('Us\\Config\\Database\\USERNAME', {{default .Env.US_PHP_DATABASE_USERNAME "'us_readwrite'"}});
+    define('Us\\Config\\Database\\PASSWORD', {{default .Env.US_PHP_DATABASE_PASSWORD "'8834EDF7-C0E4-4EAB-A998-8BC1D1C0E223'"}});
+    define('Us\\Config\\Database\\CHARSET', {{default .Env.US_PHP_DATABASE_CHARSET "'utf8'"}});
+
+    //默认图替换
+    define('Us\\Config\\FORWARD_PROFILE_COVERPAGE_PICTURE', "default");
+    define('Us\\Config\\FORWARD_EVENT_COVERPAGE_PICTURE', "default1");
+    define('Us\\Config\\FORWARD_GROUP_COVERPAGE_PICTURE', "default");
+    define('Us\\Config\\FORWARD_GROUP_COVERPAGE_FRIEND', "default");
+    define('Us\\Config\\FORWARD_GROUP_COVERPAGE_FAMILY', "default");
+
+    //表名
+    define('Us\\TableName\\USER', Us\Config\Database\DBNAME . '.user');
+    define('Us\\TableName\\EVENT_LIVE', Us\Config\Database\DBNAME . '.event_live');
+    define('Us\\TableName\\USER_LOGIN', Us\Config\Database\DBNAME . '.user_login');
+    define('Us\\TableName\\USER_CONFIG', Us\Config\Database\DBNAME . '.user_config');
+    define('Us\\TableName\\SYSTEM_CODE', Us\Config\Database\DBNAME . '.system_code');
+    define('Us\\TableName\\CAPTCHA', Us\Config\Database\DBNAME . '.captcha');
+    define('Us\\TableName\\USER_DEVICE', Us\Config\Database\DBNAME . '.user_device');
+    define('Us\\TableName\\USER_DEVICE_HISTORY', Us\Config\Database\DBNAME . '.user_device_history');
+    define('Us\\TableName\\EVENT', Us\Config\Database\DBNAME . '.event');
+    define('Us\\TableName\\EVENT_MOMENT', Us\Config\Database\DBNAME . '.event_moment');
+    define('Us\\TableName\\EVENT_USER', Us\Config\Database\DBNAME . '.event_user');
+    define('Us\\TableName\\MOMENT_PICTURE', Us\Config\Database\DBNAME . '.moment_picture');
+    define('Us\\TableName\\TUBE_USER_EVENT', Us\Config\Database\DBNAME . '.tube_user_event');
+    define('Us\\TableName\\US_GROUP', Us\Config\Database\DBNAME . '.us_group');
+    define('Us\\TableName\\TUBE_GROUP_MEMBERSHIP', Us\Config\Database\DBNAME . '.tube_group_membership');
+    define('Us\\TableName\\TUBE_GROUP_EVENT', Us\Config\Database\DBNAME . '.tube_group_event');
+    define('Us\\TableName\\USER_RECORD_PLATFROMID', Us\Config\Database\DBNAME . '.user_record_platfromid');
+    define('Us\\TableName\\STAT', Us\Config\Database\DBNAME . '.stat');
+    define('Us\\TableName\\MOMENT_COMMENT', Us\Config\Database\DBNAME . '.moment_comment');
+    define('Us\\TableName\\EVENT_REPORT', Us\Config\Database\DBNAME . '.report');
+    define('Us\\TableName\\MOMENT_LIKE', Us\Config\Database\DBNAME . '.moment_like');
+    define('Us\\TableName\\SPREAD_CHANNEL_STAT', Us\Config\Database\DBNAME . '.spread_channel_stat');
+    define('Us\\TableName\\SPREAD_SUB_CHANNEL', Us\Config\Database\DBNAME . '.spread_sub_channel');
+    define('Us\\TableName\\SPREAD_MAIN_CHANNEL', Us\Config\Database\DBNAME . '.spread_main_channel');
+    define('Us\\TableName\\GROUP_USER', Us\Config\Database\DBNAME . '.group_user');
+    define('Us\\TableName\\USER_AUDIT_LOG', Us\Config\Database\DBNAME . '.user_audit_log');
+    define('Us\\TableName\\TARGET_PUSH', Us\Config\Database\DBNAME . '.target_push');
+    define('Us\\TableName\\TAO_ASSOCIATION_STORE', Us\Config\Database\DBNAME . '.tao_association_store');
+    define('Us\\TableName\\TAO_OBJECT_STORE', Us\Config\Database\DBNAME . '.tao_object_store');
+
+    // Gearman
+    define('Us\\Config\\Gearman\HOSTNAME', {{default .Env.US_PHP_GEARMAN_HOSTNAME "'10.104.35.0'"}});
+    define('Us\\Config\\Gearman\PORT', {{default .Env.US_PHP_GEARMAN_PORT "4730"}});
+    define('Us\\Config\\Gearman\AVATAR_URL', {{default .Env.US_PHP_GEARMAN_AVATAR_URL "'Us/User/gearmanUploadAvatar?'"}});
+
+    // Redis for Tube
+    define('Us\\Config\\Tube\\Redis\\HOSTNAME', {{default .Env.US_PHP_TUBE_REDIS_HOSTNAME "'10.143.76.120'"}});
+    define('Us\\Config\\Tube\\Redis\\PORT', {{default .Env.US_PHP_TUBE_REDIS_PORT "7379"}});
+    define('Us\\Config\\Tube\\Redis\\TIMEOUT', {{default .Env.US_PHP_TUBE_REDIS_TIMEOUT "1"}});
+    define('Us\\Config\\Tube\\Redis\\RETRY_INTERVAL', {{default .Env.US_PHP_TUBE_REDIS_RETRY_INTERVAL "100"}});
+    define('Us\\Config\\Tube\\Redis\\AUTH', {{default .Env.US_PHP_TUBE_REDIS_AUTH "'8354821a0d2b5b895386302e3e875de2fd2bec8ce7a56a8e8763fff8310e9190cc536903bf7dd6be45a169dc7ec90e77a9db51bf9a079a440a7c0feecdb20096'"}});
+
+    // Redis
+    define('Us\\Config\\Redis\\HOSTNAME', {{default .Env.US_PHP_REDIS_HOSTNAME "'10.66.83.117'"}});
+    define('Us\\Config\\Redis\\PORT', {{default .Env.US_PHP_REDIS_PORT "6379"}});
+    define('Us\\Config\\Redis\\TIMEOUT', {{default .Env.US_PHP_REDIS_TIMEOUT "1"}});
+    define('Us\\Config\\Redis\\RETRY_INTERVAL', {{default .Env.US_PHP_REDIS_RETRY_INTERVAL "100"}});
+    define('Us\\Config\\Redis\\AUTH', {{default .Env.US_PHP_REDIS_AUTH "'5821ecac-9143-4b29-8d98-f95177733bb8:88788D2E'"}});
+
+    // Session
+    define('Us\\Config\\Session\\CLASSNAME', {{default .Env.US_PHP_SESSION_CLASSNAME "'yii\\redis\\Session'"}});
+    define('Us\\Config\\Session\\HOSTNAME', {{default .Env.US_PHP_SESSION_HOSTNAME "'10.66.83.117'"}});
+    define('Us\\Config\\Session\\PORT', {{default .Env.US_PHP_SESSION_PORT "6379"}});
+    define('Us\\Config\\Session\\PASSWORD', {{default .Env.US_PHP_SESSION_PASSWORD "'5821ecac-9143-4b29-8d98-f95177733bb8:88788D2E'"}});
+    
+    //前端URL常量
+    define('Us\\APP_URL_PREFIX', {{default .Env.US_PHP_APP_URL_PREFIX "'http://app.himoca.com'"}});
+    define('Us\\APP_URL', Us\APP_URL_PREFIX . "/");
+   
+    //ios下载地址
+    define('Us\\Config\\IOS_DOWNLOAD_URL', 'https://itunes.apple.com/cn/app/us/id1041870519');
+    
+    //后台
+    //OSAdmin常量
+    define('Console\\ADMIN_URL', {{default .Env.US_PHP_ADMIN_URL "'http://app.himoca.com:9987/'"}});
+    define('Console\\ADMIN_TITLE', {{default .Env.US_PHP_ADMIN_TITLE "'Us.管理后台'"}});
+    define('Console\\COMPANY_NAME', {{default .Env.US_PHP_COMPANY_NAME "'北京聚说科技有限公司'"}});
+    //COOKIE加密密钥
+    define('Console\\ADMIN\\ENCRYPT_KEY', {{default .Env.US_PHP_ADMIN_COOKIE_KEY "'comeonusyoubest!'"}});
+    
+    //redis key
+    define('Us\\User\\DISTRIBUTOR', {{default .Env.US_PHP_REDIS_KEY_USER_DISTRIBUTOR "'distributor'"}});    //渠道
+    define('Us\\User\\PHONE_MODEL', {{default .Env.US_PHP_REDIS_KEY_PHONE_MODEL "'phone.model'"}});    //手机型号
+    define('Us\\User\\CAPTCHA_PHONE', {{default .Env.US_PHP_REDIS_KEY_CAPTCHA_PHONE "'phone'"}});
+    define('Us\\User\\TUBE_USER', {{default .Env.US_PHP_REDIS_KEY_TUBE_USER "'us.user'"}});
+    define('Us\\User\\TUBE_GROUP', {{default .Env.US_PHP_REDIS_KEY_TUBE_GROUP "'us.group'"}});
+    define('Us\\User\\TUBE_MEMBERSHIP', {{default .Env.US_PHP_REDIS_KEY_TUBE_MEMBERSHIP "'us.membership'"}});
+    define('Us\\User\\US_DEVID', {{default .Env.US_PHP_REDIS_KEY_US_DEVID "'us.devid.'"}});     //统计-新增用户
+    define('Us\\Event\\INVITE', {{default .Env.US_PHP_REDIS_KEY_US_INVITE "'us.invite.'"}});     //邀请码
+    define('Us\\User\\CAPTCHA_FAILED', {{default .Env.US_PHP_REDIS_KEY_CAPTCHA_FAILED "'captcha.failed.'"}});     //邀请码
+    define('Us\\User\\SESSION', {{default .Env.US_PHP_REDIS_KEY_SESSION "'us.sessid.'"}});     //session
+    define('Us\\User\\SESSION_TUBE', {{default .Env.US_PHP_REDIS_KEY_TUBE_SESSION "'tube.sessid.'"}});     //tube session
+    define('Us\\User\\WECHAT_TOKEN', {{default .Env.US_PHP_REDIS_KEY_WECHAT_TOKEN "'token.'"}});     //weChat-token
+    define('Us\\User\\PUSH_JSON', {{default .Env.US_PHP_REDIS_KEY_PUSH_JSON "'push.json.'"}});     //push json
+    define('Us\\User\\SIGN', {{default .Env.US_PHP_REDIS_KEY_SIGN "'sign.'"}});     //sign
+    define('Us\\User\\SHARE', {{default .Env.US_PHP_REDIS_KEY_SHARE "'share_'"}});     //Stat days of sharing by redis key
+    define('Us\\Push\\PUSH_EMOJI_JSON', {{default .Env.US_PHP_PUSH_EMOJI_JSON "'push.emoji_unicode'"}});     //emoji json
+
+    // Tencent COS credentials and configs
+    define('Us\\Config\\QCloud\\APP_ID', {{default .Env.US_PHP_QCLOUD_APP_ID "'10006628'"}});
+    define('Us\\Config\\QCloud\\SECRET_ID', {{default .Env.US_PHP_QCLOUD_SECRETID "'AKIDwBwXfOISF1LWSoaoqCuCS2cRCwzhCIvk'"}});
+    define('Us\\Config\\QCloud\\SECRET_KEY', {{default .Env.US_PHP_QCLOUD_SECRET_KEY "'LI5IrAYcMPHMDyrA02tRqSQyckV8yPvB'"}});
+    define('Us\\Config\\QCloud\\USER_ID', {{default .Env.US_PHP_QCLOUD_USER_ID "'342123045'"}});
+    define('Us\\Config\\QCloud\\BUCKET', {{default .Env.US_PHP_QCLOUD_BUCKET "'uspic'"}});
+    define('Us\\Config\\QCloud\\COS_USER_AGENT', {{default .Env.US_PHP_QCLOUD_COS_USER_AGENT "'tencent-httputils/1.1'"}});
+    define('Us\\Config\\QCloud\\COS_UPLOAD', {{default .Env.US_PHP_QCLOUD_COS_UPLOAD "'http://web.file.myqcloud.com/files/v1/'"}});
+    define('Us\\Config\\QCloud\\COS_SIGN_EXPIRE', {{default .Env.US_PHP_QCLOUD_COS_SIGN_EXPIRE "20"}});
+    define('Us\\Config\\QCloud\\TENCENT_UPLOAD_SOURCE', {{default .Env.US_PHP_QCLOUD_TENCENT_UPLOAD_SOURCE "0"}}); //0:YOUTU, 1:FACE++
+
+    // Face++ credential and configs
+    define('Us\\Config\\FacePP\\API_KEY', {{default .Env.US_PHP_FACEPP_API_KEY "'793a77df865272df5c8b89c9a5697f79'"}});
+    define('Us\\Config\\FacePP\\API_SECRET', {{default .Env.US_PHP_FACEPP_API_SECRET "'9HEsf6UriDNlMiR135JEfzYInw3PyXJC'"}});
+
+    //过期时间
+    define('Us\\Config\\SESSION_EXPIRE', {{default .Env.US_PHP_SESSION_EXPIRE "0"}});    //session_key 过期时间
+    define('Us\\Config\\CAPTCHA_ATTEMPTS_EXPIRE', {{default .Env.US_PHP_CAPTCHA_ATTEMPTS_EXPIRE "86400"}});    //验证码失败次数
+    define('Us\\Config\\TUBE_SESSION_EXPIRE', {{default .Env.US_PHP_TUBE_SESSION_EXPIRE "30"}});    //tube_session_key 过期时间
+    define('Us\\Config\\SIGN_EXPIRE', {{default .Env.US_PHP_SIGN_EXPIRE "1"}});    //sign_key 过期时间
+    define('Us\\Config\\INVITE_EXPIRE', {{default .Env.US_PHP_INVITE_EXPIRE "31536000"}});    //小组邀请过期时间
+
+    //可解绑数
+    define('Us\\User\\UNLINK_NUM', 2);
+
+    //MiPush configuration
+    define('Us\\MI_PUSH\\IOS_SECRET', {{default .Env.US_PHP_MI_PUSH_IOS_SECRET "'NQAEPlJjAw8RasbftVhWpQ=='"}});
+    define('Us\\MI_PUSH\\IOS_BUNDLE_ID', {{default .Env.US_PHP_MI_PUSH_IOS_BUNDLE_ID "'com.hoolai.us'"}});
+    define('Us\\MI_PUSH\\ANDROID_SECRET', {{default .Env.US_PHP_MI_PUSH_ANDROID_SECRET "'/zQlEWfUzZcahDqxrV2Irg=='"}});
+    define('Us\\MI_PUSH\\ANDROID_BUNDLE_ID', {{default .Env.US_PHP_MI_PUSH_ANDROID_BUNDLE_ID "'com.hoolai.us'"}});
+    
+    //验证码开关
+    define('Us\\Captcha\\SEND', {{default .Env.US_PHP_CAPTCHA_SEND "1"}});                 //发送验证码开关；1-开0-关
+    define('Us\\Captcha\\VERIFY', {{default .Env.US_PHP_CAPTCHA_VERIFY "1"}});                 //验证验证码开关；1-开0-关
+
+    //push coverpage node
+    define('Us\\Config\\CMD_IOS', {{default .Env.US_PHP_CONTENT_GENERATOR_RESOLUTION_LIMIT "'/moca/spread/subscription/cmd.ios'"}});
+    define('Us\\Config\\CMD_AND', {{default .Env.US_PHP_CONTENT_GENERATOR_RESOLUTION_LIMIT "'/moca/spread/subscription/cmd.android'"}});
+
+    //Content Generate settings
+    define('Us\\Config\\CONTENT_GENERATOR_RESOLUTION_LIMIT', {{default .Env.US_PHP_CONTENT_GENERATOR_RESOLUTION_LIMIT "'[1960, 1200]'"}});
+    define('Us\\Config\\CONTENT_GENERATOR_QUALITY', {{default .Env.US_PHP_CONTENT_GENERATOR_RESOLUTION_LIMIT "'[50, 75, 95]'"}});
+    define('Us\\Config\\CONTENT_GENERATOR_MEMORY_LIMIT', {{default .Env.US_PHP_CONTENT_GENERATOR_MEMORY_LIMIT "'256M'"}});
+    define('Us\\Config\\CONTENT_GENERATOR_FILE_SIZE_LIMIT', {{default .Env.US_PHP_CONTENT_GENERATOR_FILE_SIZE_LIMIT "10485760"}});
+    define('Us\\Config\\CONTENT_GENERATOR_RATE_LIMIT', {{default .Env.US_PHP_CONTENT_GENERATOR_RATE_LIMIT "16"}});
+    define('Us\\Config\\CONTENT_GENERATOR_RATE_LIMIT_EXPIRE', {{default .Env.US_PHP_CONTENT_GENERATOR_RATE_LIMIT "600"}});
+    define('Us\\Config\\CONTENT_GENERATOR_RATE_LIMIT_KEY_PREFIX', {{default .Env.US_PHP_CONTENT_GENERATOR_RATE_LIMIT_KEY_PREFIX "'limit.content.'"}});
+
+    // aggregated log root
+    define('Us\\Config\\API_ACCESS_LOG_ROOT', {{default .Env.US_PHP_API_ACCESS_LOG_ROOT "'/usr/local/flume/us-api'"}});
+    define('Us\\Config\\CONTENT_ACCESS_LOG_ROOT', {{default .Env.US_PHP_CONTENT_ACCESS_LOG_ROOT "'/usr/local/flume/us-content'"}});
+    define('Us\\Config\\CLIENT_MINER_ROOT', {{default .Env.US_PHP_CLIENT_MINER_ROOT "'/usr/local/flume/us-client-miner'"}});
+
+    // Cross Domain Access Control
+    define('Us\\Config\\ALLOWED_ORIGIN', {{default .Env.US_PHP_ALLOWED_ORIGIN "'us-api.himoca.com'"}});
+
+    // Redis for Tao
+    define('Us\\Config\\Tao\\Redis\\HOSTNAME', {{default .Env.US_PHP_TAO_REDIS_HOSTNAME "'10.143.76.120'"}});
+    define('Us\\Config\\Tao\\Redis\\PORT', {{default .Env.US_PHP_TAO_REDIS_PORT "7381"}});
+    define('Us\\Config\\Tao\\Redis\\TIMEOUT', {{default .Env.US_PHP_TAO_REDIS_TIMEOUT "1"}});
+    define('Us\\Config\\Tao\\Redis\\RETRY_INTERVAL', {{default .Env.US_PHP_TAO_REDIS_RETRY_INTERVAL "100"}});
+    define('Us\\Config\\Tao\\Redis\\AUTH', {{default .Env.US_PHP_TAO_REDIS_AUTH "'55df80e6a6fbd58cc618559eeafdfa7147e0867dcf73e1e1136d8fd22d0786188be36342daffe90bc410cb02cd7a602941970ecc4ddad687426678cf66dc1b34'"}});
+    
+    //about group for register
+    define('Us\\REGISTER\\DEFAULT_GROUP', '家人,朋友');
+    define('Us\\REGISTER\\DEFAULT_COVERPAGE', 'family,friend');
+
+    // rabbitmq
+    define('Us\\Config\\RabbitMQ\\HOSTNAME', {{default .Env.US_PHP_RABBITMQ_HOSTNAME "'10.104.10.154'"}});
+    define('Us\\Config\\RabbitMQ\\PORT', {{default .Env.US_PHP_RABBITMQ_PORT "5672"}});
+    define('Us\\Config\\RabbitMQ\\USERNAME', {{default .Env.US_PHP_RABBITMQ_USERNAME "'us-devel'"}});
+    define('Us\\Config\\RabbitMQ\\PASSWORD', {{default .Env.US_PHP_RABBITMQ_PASSWORD "'ca604d1d5b65bc3451e2d382c93e2e3ed2fdd457006b6731bdcffbea1dccae7b'"}});
+    define('Us\\Config\\RabbitMQ\\VHOST', {{default .Env.US_PHP_RABBITMQ_VHOST "'/us/devel'"}});
+?>

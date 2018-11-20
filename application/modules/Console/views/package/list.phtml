@@ -1,0 +1,78 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div class="btn-toolbar" style="margin-bottom:2px;">
+    <a href="add" class="btn btn-primary"><i class="icon-plus"></i> 安装包</a>
+</div>
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">安装包列表</a>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th style="width:100px">创建时间</th>
+                    <th style="width:70px">安装包名</th>
+                    <th style="width:50px">平台</th>
+                    <th style="width:50px">尺寸</th>
+                    <th style="width:50px">版本号</th>
+                    <th style="width:50px">版本码</th>
+                    <th style="width:120px">描述</th>
+                    <th style="width:120px">下载地址</th>
+                    <th style="width:50px">上传人</th>
+                    <th style="width:40px">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php foreach ($package_datas as $package_data) {?>
+                  <tr>
+                      <td><?php echo $package_data['create_time']?></td>
+                      <td><?php echo $package_data['file_name']?></td>
+                      <td><?php if ($package_data['platform'] == 0) {
+                          echo '安卓';
+                      } else {
+                          echo 'ios';
+                      }?></td>
+                      <td><?php echo $package_data['package_size'].'MB'?></td>
+                      <td>&nbsp;&nbsp;
+                      <?php echo $package_data['version']?>
+                      </td>
+                      <td>&nbsp;&nbsp;
+                      <?php echo $package_data['code']?>
+                      </td>
+                      <td><?php echo $package_data['description']?></td>
+                      <?php if ($package_data['platform'] == '0') {?>
+                      <td>http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/package/<?php echo $package_data['file_name']?></td>
+                      <?php } else {?>
+                      <td>http://<?php echo Us\Config\IOS_DOWNLOAD_URL?><?php echo $package_data['file_name']?></td>
+                      <?php }?>
+                      <td><?php echo $package_data['operator']?></td>
+                      <td>
+                      &nbsp;<a href="list?page_no=<?php echo $page_no;?>&method=del&package_id=<?php echo $package_data['id'];?>#myModal" title= "删除" ><i class="icon-remove" href="list?page_no=<?php echo $page_no;?>&method=del&package_id=<?php echo $package_data['id'];?>#myModal" data-toggle="modal"></i></a>
+                      </td>
+                  </tr>
+                  <?php }?>
+              </tbody>
+            </table> 
+                <!--- START 分页模板 --->
+                
+                <?php echo $page_html;?>
+                    
+                <!--- END --->
+        </div>
+    </div>
+    
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php echo @$osadmin_action_confirm;?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php 
+include(dirname(__DIR__)."/footer.phtml");
+?>

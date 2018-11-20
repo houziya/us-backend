@@ -1,0 +1,49 @@
+{
+    "name": "us/api",
+    "description": "US API",
+    "keywords": ["us", "api"],
+    "homepage": "http://www.himoca.com/",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.6.0",
+        "yiisoft/yii2": ">=2.0.6",
+        "yiisoft/yii2-redis": ">=2.0.4",
+        "phenx/php-font-lib": "*",
+        "php-amqplib/php-amqplib": "2.5.*",
+        "phpunit/phpunit": "^5.1"
+    },
+    "require-dev": {
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "bower-asset/jquery": ">=2.1",
+        "bower-asset/yii2-pjax": ">=2.0.1"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}

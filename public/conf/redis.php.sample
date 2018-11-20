@@ -1,0 +1,9 @@
+<?php
+return function ()
+{
+    $redis = new Redis();
+    $redis->connect(Us\Config\Redis\HOSTNAME, Us\Config\Redis\PORT, Us\Config\Redis\TIMEOUT, NUll, Us\Config\Redis\RETRY_INTERVAL);
+    $redis->auth(Us\Config\Redis\AUTH);
+    return $redis;
+}
+?>

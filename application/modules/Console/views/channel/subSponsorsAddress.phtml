@@ -1,0 +1,30 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div style="height:20px;"></div>
+	<p><input type="button" onClick="copyUrl2()" value="点击全选渠道链接" class="btn btn-primary"/> <i class="label label-important">* Ctrl+C复制链接</i></p>
+	<input type="text" value="<?php echo $subLink; ?>" style="width:800px;" id="link"/>
+<div style="height:20px;"></div>
+	<p><input type="button" value="渠道Token" class="btn btn-primary"/></p>
+	<input type="text" value="<?php echo $token; ?>" style="width:800px;" />
+	
+<script type="text/javascript">
+    function copyUrl2()
+    {
+    var Url2=document.getElementById("link");
+    Url2.select(); // 选择对象
+    document.execCommand("Copy"); // 执行浏览器复制命令
+    }
+</script>
+
+<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include (dirname(__DIR__).'/footer.phtml');?>

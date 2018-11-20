@@ -1,0 +1,39 @@
+<footer>
+                        <hr>
+                        <p class="pull-right"><a href="http://us.himoca.com" target="_blank">If not now, when? If not us, who?</a> by <a href="http://us.himoca.com" target="_blank">CEO朱大大</a></p>
+
+                        <p>&copy; 2015 <a href="http://us.himoca.com" target="_blank">Us.</a></p>
+                    </footer>
+				</div>
+			</div>
+		</div>
+    <script src="<?php echo Console\ADMIN_URL ?>assets/lib/bootstrap/js/bootstrap.js"></script>
+	
+<!--- + -快捷方式的提示 --->
+	
+<script type="text/javascript">	
+	
+alertDismiss("alert-success",3);
+alertDismiss("alert-info",10);
+	
+listenShortCut("icon-plus");
+listenShortCut("icon-minus");
+doSidebar();
+
+$(function(){
+	$('#content').hover(function(){
+		$('#sidebar-nav').css('overflow-y','auto');
+	},function(){
+		$('#sidebar-nav').css('overflow-y','auto');
+		})
+	$('#sidebar-nav').hover(function(){
+		$('#body').css('overflow-y','hidden');
+	},function(){
+		$('#body').css('overflow-y','auto');
+		})
+})
+	
+
+</script>
+  </body>
+</html>

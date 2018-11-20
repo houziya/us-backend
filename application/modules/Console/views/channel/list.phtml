@@ -1,0 +1,109 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="list" method="GET" style="margin-bottom:0px"> 
+    <div style="float:left;margin-right:5px;margin-left:330px">
+        <label>&nbsp;</label>
+        <select name="platform">
+            <option value="0" selected <?php if (@$_GET['platform'] == 0) {echo 'selected';}?>>Ios</option>
+            <option value="1" <?php if (@$_GET['platform'] == 1) {echo 'selected';}?>>Android</option>
+        </select>
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label>&nbsp;</label>
+        <input type="text" id="start_date" name="start_date" value="<?php echo @date("Y-m-d",strtotime($date));?>" placeholder="起始时间" >
+    </div>
+    <div class="btn-toolbar" style="padding-top:25px;padding-bottom:0px;margin-bottom:0px">
+        <button type="submit" class="btn btn-primary">检索</button>
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">数据记录</a>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th style="text-align:center;">序号</th>
+                    <th style="text-align:center;">渠道名称</th>
+                    <th style="text-align:center;">渠道号</th>
+                    <th style="text-align:center;">点击量</th>
+                    <th style="text-align:center;">激活量</th>
+                    <th style="text-align:center;">相同IP下违规激活用户数</th>
+                    <th style="text-align:center;">有效激活</th>
+                    <th style="text-align:center;">注册量</th>
+                    <th style="text-align:center;">相同设备违规注册用户数</th>
+                    <th style="text-align:center;">扣量比例</th>
+                    <th style="text-align:center;">结算量</th>
+                    <th style="text-align:center;">状态</th>
+                    <th style="text-align:center;">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr style="border:1px solid green; color:green;">
+                    <td style="text-align:center;">总计</td>
+                    <td style="text-align:center;"><?php if (Predicates::isNotNull($total['platform'])) { if ($total['platform'] == 0) {echo 'Ios';} else {echo 'Android';}} else {echo 'Android';} ?></td>
+                    <td style="text-align:center;"><?php if (Predicates::isNotNull($total['platform'])) { if ($total['platform'] == 1) {echo 'Android';} else {echo 'Ios';}} else {echo 'Android';} ?></td>
+                    <td style="text-align:center;"><?php if (!empty($total['click'])) {echo $total['click'];} else {echo '';} ?></td>
+                    <td style="text-align:center;"><?php if (!empty($total['activation'])) {echo $total['activation'];} else {echo '';} ?></td>
+                    <td style="text-align:center;"><?php if (!empty($total['with_ip_activation'])) {echo $total['with_ip_activation'];} else {echo '';} ?></td>
+                    <td style="text-align:center;"><?php if (!empty($total['effective_activation'])) {echo $total['effective_activation'];} else {echo '';} ?></td>
+                    <td style="text-align:center;"><?php if (!empty($total['registrations'])) {echo $total['registrations'];} else {echo '';} ?></td>
+                    <td style="text-align:center;"><?php if (!empty($total['with_device_activation'])) {echo $total['with_device_activation'];} else {echo '';} ?></td>
+                    <td style="text-align:center;">--</td>
+                    <td style="text-align:center;"><?php if (!empty($total['settlement_amount'])) {echo $total['settlement_amount'];} else {echo '';} ?></td>
+                    <td style="text-align:center;">--</td>
+                    <td style="text-align:center;">--</td>
+                </tr>
+                <?php foreach ($channels as $channel) {?>
+                    <tr>
+                        <td style="text-align:center;"><?php echo @$channel['summary_day']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['sub_channel_name']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['channel_code']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['click']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['activation']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['with_ip_activation']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['effective_activation']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['registrations']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['with_device_activation']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['proportion']?></td>
+                        <td style="text-align:center;"><?php echo @$channel['settlement_amount']?></td>
+                        <td style="text-align:center;"><?php echo @($channel['status'] === "1") ? "可见" : "不可见"; ?></td>
+                        <td style="text-align:center;"><button class="btn btn-primary" onclick="window.location.href='subSponsorsUpdate?platform=<?php echo $_GET['platform'];?>&start_date=<?php echo $_GET['start_date']; ?>&ctime=<?php echo $channel['summary_day'];?>&sid=<?php echo $channel['sid'];?>'">管理</button></td>
+                    </tr>
+                <?php }?>
+              </tbody>
+            </table>
+                <div style="float:right"><button class="btn btn-primary" onclick="window.location.href='updateStatus?platform=<?php echo $total['platform'];?>&start_date=<?php echo @$date;?>'">发送数据</button></div>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+                
+        </div>
+    </div>
+
+<script>
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+</script>
+	
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

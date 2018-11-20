@@ -1,0 +1,326 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+ 
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="applicationsharing" method="GET" style="margin-bottom:0px">
+    <div style="float:left;margin-right:5px">
+    <label> 分类</label>
+    <select name='classify'>  
+        <option value="0" selected <?php if (@$_GET['classify'] == 0) { echo 'selected';}?>>总计</option>
+        <option value="1" <?php if (@$_GET['classify'] == 1) { echo 'selected';}?>>新增用户</option>
+        <option value="2" <?php if (@$_GET['classify'] == 2) { echo 'selected';}?>>IOS</option>
+        <option value="3" <?php if (@$_GET['classify'] == 3) { echo 'selected';}?>>Android</option>
+    </select>
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label> 选择起始时间 </label>
+        <input type="text" id="start_date" name="start_date" value="<?php echo @$_GET['start_date'];?>" placeholder="起始时间" >
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label>选择结束时间</label>
+        <input type="text" id="end_date" name="end_date" value="<?php echo @$_GET['end_date'];?>" placeholder="结束时间" > 
+    </div>
+    
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left">
+        <button type="submit" class="btn btn-primary"><strong>检索</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    
+    </form>
+</div>
+
+<div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">数据记录</a>
+        <?php if (@$_GET['classify'] == 0 || @$_GET['classify'] == NULL) {?>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th rowspan="2" style="vertical-align: middle">日期</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">分享按钮点击数</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">分享人数</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">分享次数</th>
+                    <th colspan="2" style="text-align:center;">长图次数</th>
+                    <th colspan="2" style="text-align:center;">H5次数</th>
+                    <th colspan="2" style="text-align:center;">安卓分享</th>
+                    <th colspan="2" style="text-align:center;">IOS分享</th>
+                    <th colspan="2" style="text-align:center;">分享微信</th>
+                    <th colspan="2" style="text-align:center;">朋友圈</th>
+                    <th colspan="2" style="text-align:center;">分享QQ</th>
+                    <th colspan="2" style="text-align:center;">分享空间</th>
+                    <th colspan="2" style="text-align:center;">分享微博</th>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php foreach ($stat_datas as $item) {?>
+                  <tr>
+                      <td><?php echo $item['stat_date']?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['ces'][0]['pv']+@$item['data']['ces'][1]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['share'][0]['uv']+@$item['data']['share'][1]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['share'][0]['pv']+@$item['data']['share'][1]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_i'][1]['uv']+@$item['data']['cs_ws_i'][0]['uv']+@$item['data']['cs_wt_i'][1]['uv']+@$item['data']['cs_wt_i'][0]['uv']+@$item['data']['cs_q_i'][1]['uv']+@$item['data']['cs_q_i'][0]['uv']+@$item['data']['cs_u_i'][1]['uv']+@$item['data']['cs_u_i'][0]['uv']+@$item['data']['cs_s_i'][1]['uv']+@$item['data']['cs_s_i'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_i'][1]['pv']+@$item['data']['cs_ws_i'][0]['pv']+@$item['data']['cs_wt_i'][1]['pv']+@$item['data']['cs_wt_i'][0]['pv']+@$item['data']['cs_q_i'][1]['pv']+@$item['data']['cs_q_i'][0]['pv']+@$item['data']['cs_u_i'][1]['pv']+@$item['data']['cs_u_i'][0]['pv']+@$item['data']['cs_s_i'][1]['pv']+@$item['data']['cs_s_i'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_l'][1]['uv']+@$item['data']['cs_ws_l'][0]['uv']+@$item['data']['cs_wt_l'][1]['uv']+@$item['data']['cs_wt_l'][0]['uv']+@$item['data']['cs_q_l'][1]['uv']+@$item['data']['cs_q_l'][0]['uv']+@$item['data']['cs_u_l'][1]['uv']+@$item['data']['cs_u_l'][0]['uv']+@$item['data']['cs_s_l'][1]['uv']+@$item['data']['cs_s_l'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_l'][1]['pv']+@$item['data']['cs_ws_l'][0]['pv']+@$item['data']['cs_wt_l'][1]['pv']+@$item['data']['cs_wt_l'][0]['pv']+@$item['data']['cs_q_l'][1]['pv']+@$item['data']['cs_q_l'][0]['pv']+@$item['data']['cs_u_l'][1]['pv']+@$item['data']['cs_u_l'][0]['pv']+@$item['data']['cs_s_l'][1]['pv']+@$item['data']['cs_s_l'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][1]['uv']+@$item['data']['cs_wt'][1]['uv']+@$item['data']['cs_q'][1]['uv']+@$item['data']['cs_u'][1]['uv']+@$item['data']['cs_s'][1]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][1]['pv']+@$item['data']['cs_wt'][1]['pv']+@$item['data']['cs_q'][1]['pv']+@$item['data']['cs_u'][1]['pv']+@$item['data']['cs_s'][1]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][0]['uv']+@$item['data']['cs_wt'][0]['uv']+@$item['data']['cs_q'][0]['uv']+@$item['data']['cs_u'][0]['uv']+@$item['data']['cs_s'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][0]['pv']+@$item['data']['cs_wt'][0]['pv']+@$item['data']['cs_q'][0]['pv']+@$item['data']['cs_u'][0]['pv']+@$item['data']['cs_s'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][1]['uv']+@$item['data']['cs_ws'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][1]['pv']+@$item['data']['cs_ws'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_wt'][1]['uv']+@$item['data']['cs_wt'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_wt'][1]['pv']+@$item['data']['cs_wt'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_q'][1]['uv']+@$item['data']['cs_q'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_q'][1]['pv']+@$item['data']['cs_q'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_u'][1]['uv']+@$item['data']['cs_u'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_u'][1]['pv']+@$item['data']['cs_u'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_s'][1]['uv']+@$item['data']['cs_u'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_s'][1]['pv']+@$item['data']['cs_u'][0]['pv'])?></td>
+                  </tr>
+                  <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+        <?php } elseif (@$_GET['classify'] == 2) {?>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th rowspan="2" style="vertical-align: middle">日期</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">分享按钮点击数</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">分享人数</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">分享次数</th>
+                    <th colspan="2" style="text-align:center;">长图次数</th>
+                    <th colspan="2" style="text-align:center;">IOS分享</th>
+                    <th colspan="2" style="text-align:center;">分享微信</th>
+                    <th colspan="2" style="text-align:center;">朋友圈</th>
+                    <th colspan="2" style="text-align:center;">分享QQ</th>
+                    <th colspan="2" style="text-align:center;">分享空间</th>
+                    <th colspan="2" style="text-align:center;">分享微博</th>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php foreach ($stat_datas as $item) {?>
+                  <tr>
+                      <td><?php echo $item['stat_date']?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['ces'][0]['pv']) {echo @$item['data']['ces'][0]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['share'][0]['uv']) {echo @$item['data']['share'][0]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['share'][0]['pv']) {echo @$item['data']['share'][0]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_i'][0]['uv']+@$item['data']['cs_wt_i'][0]['uv']+@$item['data']['cs_q_i'][0]['uv']+@$item['data']['cs_u_i'][0]['uv']+@$item['data']['cs_s_i'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_i'][0]['pv']+@$item['data']['cs_wt_i'][0]['pv']+@$item['data']['cs_q_i'][0]['pv']+@$item['data']['cs_u_i'][0]['pv']+@$item['data']['cs_s_i'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_l'][0]['uv']+@$item['data']['cs_wt_l'][0]['uv']+@$item['data']['cs_q_l'][0]['uv']+@$item['data']['cs_u_l'][0]['uv']+@$item['data']['cs_s_l'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_l'][0]['pv']+@$item['data']['cs_wt_l'][0]['pv']+@$item['data']['cs_q_l'][0]['pv']+@$item['data']['cs_u_l'][0]['pv']+@$item['data']['cs_s_l'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][0]['uv']+@$item['data']['cs_wt'][0]['uv']+@$item['data']['cs_q'][0]['uv']+@$item['data']['cs_u'][0]['uv']+@$item['data']['cs_s'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][0]['pv']+@$item['data']['cs_wt'][0]['pv']+@$item['data']['cs_q'][0]['pv']+@$item['data']['cs_u'][0]['pv']+@$item['data']['cs_s'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_ws'][0]['uv']) {echo @$item['data']['cs_ws'][0]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_ws'][0]['pv']) {echo @$item['data']['cs_ws'][0]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_wt'][0]['uv']) {echo @$item['data']['cs_wt'][0]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_wt'][0]['pv']) {echo @$item['data']['cs_wt'][0]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_q'][0]['uv']) {echo @$item['data']['cs_q'][0]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_q'][0]['pv']) {echo @$item['data']['cs_q'][0]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_u'][0]['uv']) {echo @$item['data']['cs_u'][0]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_u'][0]['pv']) {echo @$item['data']['cs_u'][0]['pv'];} else {echo 0;}?></td>
+                  </tr>
+                  <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+        <?php } elseif (@$_GET['classify'] == 3) {?>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">日期</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">分享按钮点击数</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">分享人数</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align:center">分享次数</th>
+                    <th colspan="2" style="text-align:center;">长图次数</th>
+                    <th colspan="2" style="text-align:center;">Android分享</th>
+                    <th colspan="2" style="text-align:center;">分享微信</th>
+                    <th colspan="2" style="text-align:center;">朋友圈</th>
+                    <th colspan="2" style="text-align:center;">分享QQ</th>
+                    <th colspan="2" style="text-align:center;">分享空间</th>
+                    <th colspan="2" style="text-align:center;">分享微博</th>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                    <td style="text-align:center;">人数</td>
+                    <td style="text-align:center;">次数</td>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php foreach ($stat_datas as $item) {?>
+                  <tr>
+                      <td><?php echo $item['stat_date']?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['ces'][1]['pv']) {echo @$item['data']['ces'][1]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['share'][1]['uv']) {echo @$item['data']['share'][1]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['share'][1]['pv']) {echo @$item['data']['share'][1]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_i'][1]['uv']+@$item['data']['cs_wt_i'][1]['uv']+@$item['data']['cs_q_i'][1]['uv']+@$item['data']['cs_u_i'][1]['uv']+@$item['data']['cs_s_i'][1]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_i'][1]['pv']+@$item['data']['cs_wt_i'][1]['pv']+@$item['data']['cs_q_i'][1]['pv']+@$item['data']['cs_u_i'][1]['pv']+@$item['data']['cs_s_i'][1]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_l'][1]['uv']+@$item['data']['cs_wt_l'][1]['uv']+@$item['data']['cs_q_l'][1]['uv']+@$item['data']['cs_u_l'][1]['uv']+@$item['data']['cs_s_l'][1]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws_l'][1]['pv']+@$item['data']['cs_wt_l'][1]['pv']+@$item['data']['cs_q_l'][1]['pv']+@$item['data']['cs_u_l'][1]['pv']+@$item['data']['cs_s_l'][1]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][1]['uv']+@$item['data']['cs_wt'][1]['uv']+@$item['data']['cs_q'][1]['uv']+@$item['data']['cs_u'][1]['uv']+@$item['data']['cs_s'][1]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$item['data']['cs_ws'][1]['pv']+@$item['data']['cs_wt'][1]['pv']+@$item['data']['cs_q'][1]['pv']+@$item['data']['cs_u'][1]['pv']+@$item['data']['cs_s'][1]['pv'])?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_ws'][1]['uv']) {echo @$item['data']['cs_ws'][1]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_ws'][1]['pv']) {echo @$item['data']['cs_ws'][1]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_wt'][1]['uv']) {echo @$item['data']['cs_wt'][1]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_wt'][1]['pv']) {echo @$item['data']['cs_wt'][1]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_q'][1]['uv']) {echo @$item['data']['cs_q'][1]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_q'][1]['pv']) {echo @$item['data']['cs_q'][1]['pv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_u'][1]['uv']) {echo @$item['data']['cs_u'][1]['uv'];} else {echo 0;}?></td>
+                      <td style="text-align:center;"><?php if (@$item['data']['cs_u'][1]['pv']) {echo @$item['data']['cs_u'][1]['pv'];} else {echo 0;}?></td>
+                  </tr>
+                  <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+        <?php } elseif (@$_GET['classify'] == 1) {?>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th>日期</th>
+                    <th style="text-align:center;">分享按钮点击数</th>
+                    <th style="text-align:center;">分享人数</th>
+                    <th style="text-align:center;">分享次数</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php foreach ($adds as $add) {?>
+                  <tr>
+                      <td><?php echo $add['stat_date']?></td>
+                      <td style="text-align:center;"><?php echo (@$add['data']['ces'][1]['pv']+@$add['data']['ces'][0]['pv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$add['data']['share'][1]['uv']+@$add['data']['share'][0]['uv'])?></td>
+                      <td style="text-align:center;"><?php echo (@$add['data']['share'][1]['pv']+@$add['data']['share'][0]['pv'])?></td>
+                  </tr>
+                  <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+        <?php }?>
+    </div>
+<!--- START 分页模板 --->
+<!--- END --->
+
+<script type="text/javascript">
+
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var html='';
+	html+='<option value="0">--请选择--</option>';
+	html+='<option value="1">分享微信人数</option>';
+	html+='<option value="2">分享微信次数</option>';
+	html+='<option value="3">分享朋友圈人数</option>';
+	html+='<option value="4">分享朋友圈次数</option>';
+	html+='<option value="5">分享QQ人数</option>';
+	html+='<option value="6">分享QQ次数</option>';
+	html+='<option value="7">分享QQ空间人数</option>';
+	html+='<option value="8">分享QQ空间次数</option>';
+	html+='<option value="9">分享微博人数</option>';
+	html+='<option value="10">分享微博次数</option>';
+	html+='<option value="11">长图人数</option>';
+	html+='<option value="12">长图次数</option>';
+	html+='<option value="11">H5人数</option>';
+	html+='<option value="12">H5次数</option>';
+	$('#classify').html(html);
+	
+})
+$(function() {
+	$('select').change(function(){
+		var start_date=$('#start_date').val();
+        var end_date=$('#end_date').val();
+        var classify=$(this).val();
+        $.ajax({
+            'type':'post',
+            'url':'applicationsharing',
+            'data':{'start_date':start_date,
+                    'end_date':end_date,
+                    'classify':classify},
+            'success':function(e){
+                    $('#sum').val(e);
+                }
+            },'json')
+	})
+    
+})
+</script>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

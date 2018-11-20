@@ -1,0 +1,98 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="keep" method="GET" style="margin-bottom:0px">
+    <div style="float:left;margin-right:5px">
+        <label> 选择起始时间 </label>
+        <input type="text" id="start_date" name="start_date" value="<?php echo @$_GET['start_date'];?>" placeholder="起始时间" >
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label>选择结束时间</label>
+        <input type="text" id="end_date" name="end_date" value="<?php echo @$_GET['end_date'];?>" placeholder="结束时间" > 
+    </div>
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left">
+        <button type="submit" class="btn btn-primary"><strong>检索</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+<div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">数据记录</a>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th rowspan="2" style="line-height:50px;width:150px">注册日期</th>
+                    <th rowspan="2" style="text-align:center;width:120px;line-height:50px">新增用户</th>
+                    <th colspan="15" style="text-align:center">留 &nbsp;&nbsp;&nbsp;&nbsp;存&nbsp;&nbsp;&nbsp;&nbsp;率&nbsp;&nbsp;&nbsp;&nbsp;%</th>
+                </tr>
+                <tr>
+                    <td style="text-align:center;width:60px">1天</td>
+                    <td style="text-align:center;width:60px">2天</td>
+                    <td style="text-align:center;width:60px">3天</td>
+                    <td style="text-align:center;width:60px">4天</td>
+                    <td style="text-align:center;width:60px">5天</td>
+                    <td style="text-align:center;width:60px">6天</td>
+                    <td style="text-align:center;width:60px">7天</td>
+                    <td style="text-align:center;width:60px">15天</td>
+                    <td style="text-align:center;width:60px">30天</td>
+                    <td style="text-align:center;width:60px">35天</td>
+                    <td style="text-align:center;width:60px">40天</td>
+                    <td style="text-align:center;width:60px">45天</td>
+                    <td style="text-align:center;width:60px">50天</td>
+                    <td style="text-align:center;width:60px">55天</td>
+                    <td style="text-align:center;width:60px">60天</td>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php foreach ($temp as $tem) {?>
+                  <tr> 
+                      <td><?php echo $tem['stat_date'];?></td>
+                      <td style="text-align:center;"><?php echo @$tem[0];?></td>
+                      <td style="text-align:center;"><?php if (@$tem[1] == 0.00) {echo '';}else{echo @$tem[1];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[2] == 0.00) {echo '';}else{echo @$tem[2];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[3] == 0.00) {echo '';}else{echo @$tem[3];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[4] == 0.00) {echo '';}else{echo @$tem[4];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[5] == 0.00) {echo '';}else{echo @$tem[5];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[6] == 0.00) {echo '';}else{echo @$tem[6];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[7] == 0.00) {echo '';}else{echo @$tem[7];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[8] == 0.00) {echo '';}else{echo @$tem[8];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[9] == 0.00) {echo '';}else{echo @$tem[9];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[10] == 0.00) {echo '';}else{echo @$tem[10];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[11] == 0.00) {echo '';}else{echo @$tem[11];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[12] == 0.00) {echo '';}else{ echo @$tem[12];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[13] == 0.00) {echo '';}else{ echo @$tem[13];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[14] == 0.00) {echo '';}else{ echo @$tem[14];}?></td>
+                      <td style="text-align:center;"><?php if (@$tem[15] == 0.00) {echo '';}else{ echo @$tem[15];}?></td>
+                  </tr>
+                  <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+</div>
+<script>
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+</script>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

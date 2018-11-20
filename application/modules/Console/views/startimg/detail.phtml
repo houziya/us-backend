@@ -1,0 +1,119 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>    
+<div class="well">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">请填写启动图资料</a></li>
+    </ul>
+    <div class="btn-toolbar">
+        <?php if ($img['platform'] == 0) {?>
+        <button id="android" class="btn btn-primary">android</button>
+        <?php } else {?>
+        <button id="ios" class="btn btn-primary" style="width:78px">ios</button>
+        <?php }?>
+    </div>
+    <?php if ($img['platform'] == 0) {?>
+    <div id="myTabContent1" class="tab-content">
+        <div class="tab-pane active in" id="home">
+            <form id="tab1" method="post" action="add" autocomplete="off" enctype="multipart/form-data">
+                <span>启&nbsp;动&nbsp;图:&nbsp;</span>
+                <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $img['images']['android']?>.jpg" style="width:80px;height:80px;object-fit:cover">
+                <br><br>
+                <span>标题:</span>
+                <span><?php echo $img['title']?></span>
+                <br><br>
+                <span>跳转地址:</span>
+                <span><?php echo $img['skip_url']?></span>
+                <br><br>
+                <span>时间控制:</span>
+                <span><?php echo $img['duration']?></span>
+                <br><br>
+                <span>启动图是否允许跳过:</span>
+                <span>
+                    <?php if ($img['can_skip'] == 0) {echo '否';}?>
+                     <?php if ($img['can_skip'] == 1) {echo '是';}?>
+                </span>
+                <br><br>
+                <span>类型:</span>
+                <span>
+                     <?php if ($img['action_type'] == 1) {echo 'Web';}?>
+                     <?php if ($img['action_type'] == 2) {echo '现场';}?>
+                </span>
+                <br><br>
+                <span>版本码:</span>
+                <?php 
+                foreach ($package_datas as $package_data) {
+                    if ($package_data['platform'] == 0) {
+                ?>
+                <input type="checkbox"  name="code[]" value="<?php echo $package_data['code'];?>" style="margin:0px;" <?php foreach ($img['code'] as $v) {if ($v == $package_data['code']) {echo 'checked';}}?>><?php echo $package_data['code'];?>
+                <?php }}?>
+                <div class="btn-toolbar">
+                    <button type="submit" class="btn btn-primary"><strong>提交</strong></button>
+                    <div class="btn-group"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <?php } else {?>
+    <div id="myTabContent2" class="tab-content">
+        <div class="tab-pane active in" id="home">
+            <form id="tab2" method="post" action="add" autocomplete="off" enctype="multipart/form-data">
+                <span>ios4:</span>
+                <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $img['images']['ios4']?>.jpg" style="width:60px;height:60px;object-fit:cover" >
+                <span>ios5:</span>
+                <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $img['images']['ios5']?>.jpg" style="width:60px;height:60px;object-fit:cover" >
+                <span>ios6:</span>
+                <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $img['images']['ios6']?>.jpg" style="width:60px;height:60px;object-fit:cover" >
+                <span>ios6s:</span>
+                <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/images/splash/<?php echo $img['images']['ios6s']?>.jpg" style="width:60px;height:60px;object-fit:cover" >
+                <br><br>
+                <span>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题:</span>
+                <span><?php echo $img['title']?></span>
+                <br><br>
+                <span>创建时间:</span>
+                <span><?php echo $img['create_time']?></span>
+                <br><br>
+                <span>平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;台:</span>
+                <span>
+                    <?php if ($img['platform'] == 1) { echo 'ios';} else { echo 'android';}?>
+                </span>
+                <br><br>
+                <span>跳转地址:</span>
+                <span><?php echo $img['skip_url']?></span>
+                <br><br>
+                <span>时间控制:</span>
+                <span><?php echo $img['duration']?></span>
+                <br><br>
+                <span>允许跳过:</span>
+                <span>
+                <?php if ($img['can_skip'] == 0) {echo '否';}?>
+                <?php if ($img['can_skip'] == 1) {echo '是';}?>
+                </span>
+                <br><br>
+                <span>选择类型:</span>
+                <span>
+                    <?php if ($img['action_type'] == 1) {echo 'Web';}?>
+                    <?php if ($img['action_type'] == 2) {echo '现场';}?>
+                </span>
+                <br><br>
+                <span>版&nbsp;本&nbsp;&nbsp;码:</span>
+                <?php foreach ($package_datas as $package_data) {
+                        if ($package_data['platform'] == 1) {
+                ?>
+                <?php foreach ($img['code'] as $v) {if ($v == $package_data['code']) {echo $package_data['code'].',';}}?>
+                <?php }}?>
+            </form>
+        </div>
+    </div>
+    <?php }?>
+</div>
+<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

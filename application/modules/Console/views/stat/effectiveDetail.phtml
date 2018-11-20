@@ -1,0 +1,89 @@
+<?php  
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="effectiveDetail" method="GET" style="margin-bottom:0px"> 
+    <div style="float:left;margin-right:5px;">
+        <label> 分类 </label>
+        <select name="classify">
+            <option value="0" <?php if (@$_GET['classify'] == 0) {echo 'selected';}?>>总计</option>
+            <option value="1" <?php if (@$_GET['classify'] == 1) {echo 'selected';}?>>新增用户</option>
+        </select>
+    </div>
+    <div style="float:left;margin-right:5px;">
+        <label> 选择起始时间 </label>
+        <input type="text" id="start_date" name="start_date" value="<?php echo @$_GET['start_date'];?>" placeholder="起始时间" >
+    </div>
+    <div style="float:left;margin-right:5px;">
+        <label> 选择结束时间 </label>
+        <input type="text" id="end_date" name="end_date" value="<?php echo @$_GET['end_date'];?>" placeholder="结束时间" >
+    </div>
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left">
+        <button type="submit" class="btn btn-primary"><strong>检索</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">有效活动详情</a>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th style="text-align:center">日期</th>
+                    <th style="text-align:center">新增有效活动</th>
+                    <th style="text-align:center">概况</th>
+                    <th style="text-align:center">详情</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php foreach ($temp as $tem) {?>
+                  <tr>
+                      <td style="text-align:center"><?php echo $tem['stat_date']?></td>
+                      <td style="text-align:center"><?php echo $tem['sum']?></td>
+                      <td style="text-align:center"><a href="javascript:void(0);" onclick="detail(this)">查看概况</a></td>
+                      <td style="text-align:center"><a href="detail?classify=<?php echo @$_GET['classify']?>&stat_date=<?php echo $tem['stat_date']?>">详情</a></td>
+                  </tr>
+                  <tr>
+                      <td colspan="4">
+                          <div class="detail"><?php echo $tem['count']?></div>
+                      </td>
+                  </tr>
+                  <?php }?>
+                  
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+    </div>
+
+<script>
+$(function() {
+	$('div.detail').parents('tr').hide();
+})
+function detail(obj) {
+	$(obj).parents('tr').next().toggle();
+}
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+</script>
+	
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

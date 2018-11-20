@@ -1,0 +1,70 @@
+<?php 
+    if($sidebarStatus){
+        echo  "<body id='body' class='body'>";
+    }else{
+        echo "<body id='body' class='body-fullscreen'>";
+    }
+?>
+<div class="navbar" style="position:fixed;width:100%;z-index:99;">
+    <div class="navbar-inner">
+        <ul class="nav pull-right">
+            <?php 
+                if($sidebarStatus){ 
+               
+            ?>
+                <li class="doSidebarClz"><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">
+                关闭侧栏<i class="icon-step-backward"></i>
+                </a></li>
+            <?php 
+                  }else{
+            ?>
+                <li class="doSidebarClz"><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">
+                打开侧栏<i class="icon-step-forward"></i>
+                </a></li>
+            <?php 
+                }
+            ?>
+            <?php 
+                if($setting==1){
+            ?>
+            <li id="fat-menu" class="dropdown">
+                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-cog"></i>设置<i class="icon-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo Console\ADMIN_URL;?>/Console/System/setting">系统设置</a></li>
+                </ul>
+            </li>
+            <?php 
+                 }
+            ?>
+            <li id="fat-menu" class="dropdown">
+                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                选择模板
+                <i class="icon-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <?php 
+                        foreach ($templates as $key => $style) {
+                    ?>
+                    <li><a href="<?php echo Console\ADMIN_URL; ?>Console/System/set?t=<?php echo $key; ?>"><?php echo $style; ?></a></li>
+                    <?php
+                        }
+                    ?>
+                </ul>
+             </li>
+            <li id="fat-menu" class="dropdown">
+                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-user"></i><?php echo $user_info['user_name'];?>
+                    <i class="icon-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="<?php echo Console\ADMIN_URL; ?>Console/User/profile">我的账号</a></li>
+                    <li><a tabindex="-1" href="<?php echo Console\ADMIN_URL;?>Console/User/logout">退出</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+        <a class="brand" href="<?php echo Console\ADMIN_URL; ?>Console/User/index"><span class="first"></span> <span class="second"><?php echo Console\ADMIN_TITLE; ?></span></a>
+        </div>
+</div>

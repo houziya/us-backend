@@ -1,0 +1,124 @@
+<?php  
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+ 
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="sharerelated" method="GET" style="margin-bottom:0px">
+    <div style="float:left;margin-right:5px">
+        <label> 选择起始时间 </label>
+        <input type="text" id="start_date" name="start_date" value="<?php echo @$_GET['start_date'];?>" placeholder="起始时间" >
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label>选择结束时间</label>
+        <input type="text" id="end_date" name="end_date" value="<?php echo @$_GET['end_date'];?>" placeholder="结束时间" > 
+    </div>
+    
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left">
+        <button type="submit" class="btn btn-primary"><strong>检索</strong></button>
+    </div>
+    <div style="float:left;margin-left:180px">
+    <label> 分类</label>
+    <select name='classify' id="classify">
+    </select>
+    </div>
+    <div style="float:left;margin-left:5px">
+        <label>总计</label>
+        <input type="text" id="sum" placeholder="总计" disabled="disabled"> 
+    </div>
+    <div style="clear:both;"></div>
+    
+    </form>
+</div>
+
+<div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">数据记录</a>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th style="width:50px">日期</th>
+                    <th style="width:48px">H5分享次数</th>
+                    <th style="width:48px">H5曝光数量</th>
+                    <th style="width:78px">下载按钮点击次数</th>
+                    <th style="width:68px">Android下载次数</th>
+                    <th style="width:48px">IOS下载次数</th>
+                    <th style="width:68px">Android激活次数</th>
+                    <th style="width:48px">IOS激活次数</th>
+                    <th style="width:58px">Android注册数</th>
+                    <th style="width:45px">IOS注册数</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php foreach ($stat_datas as $stat_data) {?>
+                  <tr>
+                      <td><?php echo $stat_data['stat_date']?></td>
+                      <td><?php echo $stat_data['data']['s']?></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+    </div>
+<!--- START 分页模板 --->
+<!--- END --->
+
+<script type="text/javascript">
+
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var html='';
+	html+='<option value="0">--请选择--</option>';
+	html+='<option value="1">H5分享</option>';
+	$('#classify').html(html);
+	
+})
+$(function() {
+	$('select').change(function(){
+		var start_date=$('#start_date').val();
+        var end_date=$('#end_date').val();
+        var classify=$(this).val();
+        $.ajax({
+            'type':'post',
+            'url':'sharerelated',
+            'data':{'start_date':start_date,
+                    'end_date':end_date,
+                    'classify':classify},
+            'success':function(e){
+                    $('#sum').val(e);
+                }
+            },'json')
+	})
+    
+})
+</script>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

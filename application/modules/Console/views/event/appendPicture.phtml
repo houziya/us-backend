@@ -1,0 +1,120 @@
+<?php
+//setcookie('complete_url',$_SERVER["QUERY_STRING"],0);
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="appendDetail" method="post" style="margin-bottom:0px">
+        <div style="margin-left:280px">
+            <label>&nbsp;</label>
+            <span style="margin-right: 20px;">归属Us账号</span>
+            <input type="text" name="userId" id="userId" value="<?php //echo @$_GET['event_id'];?>" placeholder="归属Us账号" />
+        </div>
+        <div style="margin-left:280px">
+            <span style="margin-right: 52px;">活动ID</span>
+            <input type="text" name="eventId" id="eventId" value="<?php echo $eventId;?>" placeholder="活动ID" />
+        </div>
+        <div class="btn-toolbar" style="padding-bottom:0px;margin-bottom:0px;margin-left:380px">
+            <button type="submit" id="addPicture" class="btn btn-primary"><strong>添加照片</strong></button>
+        </div>
+        <div style="clear:both;"></div>
+        <input type="hidden" name="flag" id="flag" value="0" />
+    </form>
+</div>
+
+<div class="block">
+    <a href="#page-stats" class="block-heading" data-toggle="collapse">操作记录</a>
+    <div id="page-stats" class="block-body collapse in">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>动态 ID</th>
+                <th>时间</th>
+                <th>姓名</th>
+                <th>照片数</th>
+                <th>归属活动 ID</th>
+                <th width="80px">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            if (isset($logs)) {
+                foreach ($logs as $key => $log) {
+                    ?>
+                    <tr>
+                        <td><?php echo ($pageNo-1)*$pageSize+$key+1;?></td>
+                        <td><?php echo $log['momentId'];?></td>
+                        <td><?php echo $log['create_time'];?></td>
+                        <td><?php echo $log['realName'];?></td>
+                        <td><?php echo $log['picNumber'];?></td>
+                        <td><?php echo $log['eventId'];?></td>
+                        <td>
+                            <a href="appendDetail?momentId=<?php echo $log['momentId'];?>&flag=<?php echo $flag;?>" title="成员列表"><i class="icon-list-alt"></i>详情</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            }
+            ?>
+            </tbody>
+        </table>
+
+        <!--- START 分页模板 --->
+
+        <!--- END --->
+    </div>
+    <?php 
+        if(isset($pageHtml)) {
+            echo $pageHtml;
+        }
+    ?>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('form:first').submit(function(){
+            var userId = $('#userId').val();
+            var eventId = $('#eventId').val();
+            var status = 0;
+            if (userId.length == 0 || eventId.length == 0) {
+                alert('输入项存在空数据,请检查是否输入 userId 或者是否输入 eventId !');
+                return false;
+            }
+            $.ajax({
+                type: 'post',
+                url: 'ajaxVerifyStatus',
+                async: false,
+                data: {'userId': userId, 'eventId': eventId},
+                success: function(data){
+                    data = $.parseJSON(data);
+                    status = data.status;
+                }
+            });
+            switch (status) {
+                case 0:
+                    return true;
+                case 1:
+                    alert('非法的数据状态,请检查 userId 是否被封停或者 eventId 是否被锁定或删除!');
+                    return false;
+            }
+        });
+    });
+</script>
+
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php //echo @$osadmin_action_confirm;?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php
+include(dirname(__DIR__)."/footer.phtml");
+?>

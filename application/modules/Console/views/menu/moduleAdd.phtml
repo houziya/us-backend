@@ -1,0 +1,61 @@
+<?php 
+include (dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+    echo @$osadmin_action_alert;
+    echo @$osadmin_quick_note;
+?>
+<div class="well">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">请填写菜单模块资料</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+         <div class="tab-pane active in" id="home">
+           <form id="tab" method="post">
+                <label>模块名称 <i class="label label-important">*必填项</i></label>
+                <input type="text" name="moduleName" class="input-xlarge" required="true" autofocus="true" >
+                <label>模块链接 <i class="label label-important">*必填项</i></label>
+                <input type="text" name="moduleUrl"  class="input-xlarge" required="true">
+                <label>模块图标</label>
+                <div style="width:20px;padding-bottom:5px">
+                    <a class="icon" style="width:20px;line-height:2em;">
+                    <i id="icon_preview" class="icon-th"></i></a>
+                </div>
+                <input type="text" readonly value="icon-th" name="moduleIcon" id="icon_id" style="width:180px" >
+                <a id="icon_select" class="btn btn-info" style="vertical-align:top" >更改图标</a>
+                <!--- 选择图标层--->
+                <?php include (dirname(__DIR__).'/iconSelect.phtml'); ?>
+                <!--- 选择图标层 结束--->
+                <label>模块排序数字<i class="badge badge-info">(数字越小越靠前)</i></label>
+                <input type="text" name="moduleSort" value="" class="input-xlarge">
+                <label>描述</label>
+                <textarea name="moduleDesc" rows="3" class="input-xlarge"></textarea>
+                <div class="btn-toolbar">
+                    <button type="submit" class="btn btn-primary"><strong>提交</strong></button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+$('#icon_select').click(function(){	
+    $('#myModal').modal({
+        backdrop:true,
+        keyboard:true,
+        show:true
+    });	
+});
+
+$('.icon').click(function(){
+     var obj=$(this);
+     $('#icon_preview').removeClass().addClass(obj.text());
+     $('#icon_id').val(obj.text());
+     $('#myModal').modal('toggle');
+});
+</script>
+<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include (dirname(__DIR__).'/footer.phtml');?>

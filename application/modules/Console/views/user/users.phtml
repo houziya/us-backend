@@ -1,0 +1,112 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+
+<div class="btn-toolbar" style="margin-bottom:2px;">
+    <a href="add" class="btn btn-primary"><i class="icon-plus"></i> 账号</a>
+    <a data-toggle="collapse" data-target="#search"  href="#" title= "检索"><button class="btn btn-primary" style="margin-left:5px"><i class="icon-search"></i></button></a>
+</div>
+<div id="search" class="collapse out">
+<form class="form_search"  action="users" method="GET" style="margin-bottom:0px">
+    <div style="float:left;margin-right:5px">
+    <label>选择账号组</label>
+        <select name="user_group" id="DropDownTimezone" class="input-xlarge">
+            <?php foreach ($group_options as $k => $v) {?>
+            <option value="<?php echo $k;?>" <?php if(@$_GET['user_group'] == $k){echo 'selected';}?>><?php echo $v;?></option>
+            <?php }?>
+        </select>
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label>查询所有用户请留空</label>
+        <input type="text" name="user_name" value="<?php echo @$_GET['user_name'];?>" placeholder="输入登录名" > 
+        <input type="hidden" name="search" value="1" > 
+    </div>
+    <div class="btn-toolbar" style="padding-top:25px;padding-bottom:0px;margin-bottom:0px">
+        <button type="submit" class="btn btn-primary">检索</button>
+    </div>
+    <div style="clear:both;"></div>
+</form>
+</div>
+
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">账号列表</a>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th style="width:20px">#</th>
+                    <th style="width:80px">登录名</th>
+                    <th style="width:100px">姓名</th>
+                    <th style="width:100px">手机</th>
+                    <th style="width:80px">邮箱</th>
+                    <th style="width:80px">登录时间</th>
+                    <th style="width:80px">登录IP</th>
+                    <th style="width:80px">Group#</th>
+                    <th style="width:80px">描述</th>
+                    <th style="width:80px">操作</th>
+                </tr>
+              </thead>
+              <tbody>							  
+                    <?php foreach ($user_infos as $user_info) {
+                            if($current_user_info['user_id']!=1){
+                                if($user_info['user_id']==1){
+                                    continue;
+                                }
+                            }
+                    ?>
+                    <tr>
+                    <td><?php echo $user_info['user_id'];?></td>
+                    <td><?php echo $user_info['user_name'];?></td>
+                    <td><?php echo $user_info['real_name'];?></td>
+                    <td><?php echo $user_info['mobile'];?></td>
+                    <td><?php echo $user_info['email'];?></td>
+                    <td><?php echo $user_info['login_time'];?></td>
+                    <td><?php echo $user_info['login_ip'];?></td>
+                    <td><?php echo $user_info['group_name'];?></td>
+                    <td><?php echo $user_info['user_desc'];?></td>
+                    <td>
+                    <a href="modify?user_id=<?php echo $user_info['user_id'];?>" title= "修改" ><i class="icon-pencil"></i></a>
+                    &nbsp;
+                    <?php 
+                    if ($user_info['user_id'] != 1) {
+                        if ($user_info['status'] == 1) {
+                    ?>
+                    <a data-toggle="modal" href="users?page_no=<?php echo $page_no;?>&method=pause&user_id=<?php echo $user_info['user_id'];?>#myModal" title= "封停账号" ><i class="icon-pause" href="users?page_no=<?php echo $page_no;?>&method=pause&user_id=<?php echo $user_info['user_id'];?>#myModal" data-toggle="modal"></i></a>
+                    <?php 
+                        }elseif($user_info['status'] == 0){
+                    ?>
+                    <a data-toggle="modal" href="users?page_no=<?php echo $page_no;?>&method=play&user_id=<?php echo $user_info['user_id'];?>#myModal" title= "解封账号" ><i class="icon-play" href="users?page_no=<?php echo $page_no;?>&method=play&user_id=<?php echo $user_info['user_id'];?>#myModal" data-toggle="modal"></i></a>
+                    <?php 
+                        }
+                    ?>
+                    &nbsp;
+                    <a href="users?page_no=<?php echo $page_no;?>&method=del&user_id=<?php echo $user_info['user_id'];?>#myModal" title= "删除" ><i class="icon-remove" href="users?page_no=<?php echo $page_no;?>&method=del&user_id=<?php echo $user_info['user_id'];?>#myModal" data-toggle="modal"></i></a>
+                    </td>
+                    </tr>
+                <?php }}?>
+              </tbody>
+            </table> 
+                <!--- START 分页模板 --->
+                
+                <?php echo $page_html;?>
+                    
+                <!--- END --->
+        </div>
+    </div>
+
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php echo @$osadmin_action_confirm;?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php 
+include(dirname(__DIR__)."/footer.phtml");
+?>
+

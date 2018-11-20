@@ -1,0 +1,207 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="hot" method="GET" style="margin-bottom:0px">
+    <div style="float:left;margin-right:5px">
+        <label> 选择当前时间 </label>
+        <input type="text" id="start_date" name="start_date" value="<?php echo @date("Y-m-d",strtotime($start_time));?>" placeholder="起始时间" >
+    </div>
+    <div style="float:left;margin-right:5px">
+    <label>选择开始时段</label>
+    <select name='start_time'>
+        <option value="">--请选择--</option>
+        <option value="0000" <?php if (@$_GET['start_time'] == '0000') {echo 'selected';}?>>00:00</option>
+        <option value="0100" <?php if (@$_GET['start_time'] == '0100') {echo 'selected';}?>>01:00</option>
+        <option value="0200" <?php if (@$_GET['start_time'] == '0200') {echo 'selected';}?>>02:00</option>
+        <option value="0300" <?php if (@$_GET['start_time'] == '0300') {echo 'selected';}?>>03:00</option>
+        <option value="0400" <?php if (@$_GET['start_time'] == '0400') {echo 'selected';}?>>04:00</option>
+        <option value="0500" <?php if (@$_GET['start_time'] == '0500') {echo 'selected';}?>>05:00</option>
+        <option value="0600" <?php if (@$_GET['start_time'] == '0600') {echo 'selected';}?>>06:00</option>
+        <option value="0700" <?php if (@$_GET['start_time'] == '0700') {echo 'selected';}?>>07:00</option>
+        <option value="0800" <?php if (@$_GET['start_time'] == '0800') {echo 'selected';}?>>08:00</option>
+        <option value="0900" <?php if (@$_GET['start_time'] == '0900') {echo 'selected';}?>>09:00</option>
+        <option value="1000" <?php if (@$_GET['start_time'] == '1000') {echo 'selected';}?>>10:00</option>
+        <option value="1100" <?php if (@$_GET['start_time'] == '1100') {echo 'selected';}?>>11:00</option>
+        <option value="1200" <?php if (@$_GET['start_time'] == '1200') {echo 'selected';}?>>12:00</option>
+        <option value="1300" <?php if (@$_GET['start_time'] == '1300') {echo 'selected';}?>>13:00</option>
+        <option value="1400" <?php if (@$_GET['start_time'] == '1400') {echo 'selected';}?>>14:00</option>
+        <option value="1500" <?php if (@$_GET['start_time'] == '1500') {echo 'selected';}?>>15:00</option>
+        <option value="1600" <?php if (@$_GET['start_time'] == '1600') {echo 'selected';}?>>16:00</option>
+        <option value="1700" <?php if (@$_GET['start_time'] == '1700') {echo 'selected';}?>>17:00</option>
+        <option value="1800" <?php if (@$_GET['start_time'] == '1800') {echo 'selected';}?>>18:00</option>
+        <option value="1900" <?php if (@$_GET['start_time'] == '1900') {echo 'selected';}?>>19:00</option>
+        <option value="2000" <?php if (@$_GET['start_time'] == '2000') {echo 'selected';}?>>20:00</option>
+        <option value="2100" <?php if (@$_GET['start_time'] == '2100') {echo 'selected';}?>>21:00</option>
+        <option value="2200" <?php if (@$_GET['start_time'] == '2200') {echo 'selected';}?>>22:00</option>
+        <option value="2300" <?php if (@$_GET['start_time'] == '2300') {echo 'selected';}?>>23:00</option>
+    </select>
+    </div>
+    <div style="float:left;margin-right:5px">
+    <label>选择结束时段</label>
+    <select name='end_time'>
+        <option value="">--请选择--</option>
+        <option value="0000" <?php if (@$_GET['end_time'] == '0000') {echo 'selected';}?>>00:00</option>
+        <option value="0100" <?php if (@$_GET['end_time'] == '0100') {echo 'selected';}?>>01:00</option>
+        <option value="0200" <?php if (@$_GET['end_time'] == '0200') {echo 'selected';}?>>02:00</option>
+        <option value="0300" <?php if (@$_GET['end_time'] == '0300') {echo 'selected';}?>>03:00</option>
+        <option value="0400" <?php if (@$_GET['end_time'] == '0400') {echo 'selected';}?>>04:00</option>
+        <option value="0500" <?php if (@$_GET['end_time'] == '0500') {echo 'selected';}?>>05:00</option>
+        <option value="0600" <?php if (@$_GET['end_time'] == '0600') {echo 'selected';}?>>06:00</option>
+        <option value="0700" <?php if (@$_GET['end_time'] == '0700') {echo 'selected';}?>>07:00</option>
+        <option value="0800" <?php if (@$_GET['end_time'] == '0800') {echo 'selected';}?>>08:00</option>
+        <option value="0900" <?php if (@$_GET['end_time'] == '0900') {echo 'selected';}?>>09:00</option>
+        <option value="1000" <?php if (@$_GET['end_time'] == '1000') {echo 'selected';}?>>10:00</option>
+        <option value="1100" <?php if (@$_GET['end_time'] == '1100') {echo 'selected';}?>>11:00</option>
+        <option value="1200" <?php if (@$_GET['end_time'] == '1200') {echo 'selected';}?>>12:00</option>
+        <option value="1300" <?php if (@$_GET['end_time'] == '1300') {echo 'selected';}?>>13:00</option>
+        <option value="1400" <?php if (@$_GET['end_time'] == '1400') {echo 'selected';}?>>14:00</option>
+        <option value="1500" <?php if (@$_GET['end_time'] == '1500') {echo 'selected';}?>>15:00</option>
+        <option value="1600" <?php if (@$_GET['end_time'] == '1600') {echo 'selected';}?>>16:00</option>
+        <option value="1700" <?php if (@$_GET['end_time'] == '1700') {echo 'selected';}?>>17:00</option>
+        <option value="1800" <?php if (@$_GET['end_time'] == '1800') {echo 'selected';}?>>18:00</option>
+        <option value="1900" <?php if (@$_GET['end_time'] == '1900') {echo 'selected';}?>>19:00</option>
+        <option value="2000" <?php if (@$_GET['end_time'] == '2000') {echo 'selected';}?>>20:00</option>
+        <option value="2100" <?php if (@$_GET['end_time'] == '2100') {echo 'selected';}?>>21:00</option>
+        <option value="2200" <?php if (@$_GET['end_time'] == '2200') {echo 'selected';}?>>22:00</option>
+        <option value="2300" <?php if (@$_GET['end_time'] == '2300') {echo 'selected';}?>>23:00</option>
+    </select>
+    </div>
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left">
+        <button type="submit" class="btn btn-primary"><strong>检索</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    
+    </form>
+</div>
+<!--<button class="btn" theme="skies" style="width:80px">天空</button>
+<button class="btn" theme="gray" style="width:80px">灰色</button>
+<button class="btn" theme="dark-green" style="width:80px">深绿</button>
+<button class="btn" theme="unica" style="width:80px">unica</button>
+<button class="btn" theme="signika" style="width:80px">signika</button>-->
+
+<div class="block">
+    <a href="#page-stats" class="block-heading" data-toggle="collapse">数据记录</a>
+    <div id="page-stats" class="block-body collapse in">
+        <table class="table table-striped">
+            
+        </table>
+        <?php //echo $page_html;?>
+    </div>
+</div>
+<!--- START 分页模板 --->
+<!--- END --->
+
+<script type="text/javascript">
+var val=<?php echo json_encode($val);?>;
+var temp=<?php echo json_encode($temp); ?>;
+//var share_wxst=<?php //echo json_encode($share_wxst);?>;
+//var share_qq=<?php //echo json_encode($share_qq);?>;
+//var share_url=<?php //echo json_encode($share_url);?>;
+//var share_sina=<?php //echo json_encode($share_sina);?>;
+//var start_date=<?php //echo json_encode(@$_GET['start_date'])?>;
+//var end_date=<?php //echo json_encode(@$_GET['end_date'])?>;
+//var col=<?php //echo json_encode(@$_GET['theme'])?>;
+//var page_no=<?php //echo json_encode($page_no)?>;
+
+$('table.table-striped').highcharts({
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: '当天接口热度曲线图'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        categories: temp
+    },
+    yAxis: {
+        title: {
+            text: '次数 '
+        }
+    },
+    tooltip: {
+        enabled: false,
+        formatter: function() {
+            return '<b>'+ this.series.name +'</b><br/>'+this.x +': '+ this.y +'°C';
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [{
+        name: '接口热度',
+        data: val
+    }]
+});
+
+// if ($("button[theme="+col+"]").attr('theme') != null) {
+//     $("button[theme="+col+"]").addClass('btn-primary').siblings().removeClass('btn-primary');
+// }
+
+// if (page_no == null) {
+// 	page_no=1;
+// }
+
+// $('button.btn').click(function(){
+// 	var theme=$(this).attr('theme');
+	
+// 	if (theme != null && start_date== null && end_date== null) {
+// 	    window.location.href="applicationsharing?page_no="+page_no+"&theme="+theme+"&start_date=&end_date=";
+// 	    return;
+// 	} else if (theme != null && start_date != null && end_date == null) {
+// 		window.location.href="applicationsharing?page_no="+page_no+"&theme="+theme+"&start_date="+start_date+"&end_date=";
+// 	    return;
+// 	} else if (theme != null && start_date != null && end_date != null) {
+// 		window.location.href="applicationsharing?page_no="+page_no+"&theme="+theme+"&start_date="+start_date+"&end_date="+end_date;
+// 	    return;
+// 	}
+// });
+
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+// $(function() {
+// 	$('select').change(function(){
+// 		var start_date=$('#start_date').val();
+//         var end_date=$('#end_date').val();
+//         var classify=$(this).val();
+//         $.ajax({
+//             'type':'post',
+//             'url':'applicationsharing',
+//             'data':{'start_date':start_date,
+//                     'end_date':end_date,
+//                     'classify':classify},
+//             'success':function(e){
+//                     $('#sum').val(e);
+//                 }
+//             },'json')
+// 	})
+    
+// })
+</script>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

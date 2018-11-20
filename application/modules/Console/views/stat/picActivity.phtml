@@ -1,0 +1,227 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="picActivity" method="GET" style="margin-bottom:0px"> 
+    <div style="float:left;margin-right:5px">
+    <label> 分类</label>
+    <select name="classify">
+        <option value="0" selected <?php if (@$_GET['classify'] == 0) { echo 'selected';}?>>总计</option>
+        <option value="1" <?php if (@$_GET['classify'] == 1) { echo 'selected';}?>>新增用户</option>
+        <option value="2" <?php if (@$_GET['classify'] == 2) { echo 'selected';}?>>IOS</option>
+        <option value="3" <?php if (@$_GET['classify'] == 3) { echo 'selected';}?>>Android</option>
+    </select>
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label> 选择起始时间 </label>
+        <input type="text" id="start_date" name="start_date" value="<?php echo @$_GET['start_date'];?>" placeholder="起始时间" >
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label>选择结束时间</label>
+        <input type="text" id="end_date" name="end_date" value="<?php echo @$_GET['end_date'];?>" placeholder="结束时间" > 
+    </div>
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left">
+        <button type="submit" class="btn btn-primary"><strong>检索</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">数据记录</a>
+        <?php if (@$_GET['classify'] == 0 || @$_GET['classify'] == NULL) {?>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th>日期</th>
+                    <th style="text-align:center;">创建活动按钮点击数</th>
+                    <th style="text-align:center;">创建活动数量</th>
+                    <th style="text-align:center;">新增有效活动数量</th>
+                    <th style="text-align:center;">新增男有效活动</th>
+                    <th style="text-align:center;">新增女有效活动</th>
+                    <th style="text-align:center;">上传照片人数</th>
+                    <th style="text-align:center;">上传照片数</th>
+                    <th style="text-align:center;">非创建者上传照片数</th>
+                    <th style="text-align:center;">男上传照片总数</th>
+                    <th style="text-align:center;">女上传照片总数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($stat_datas as $stat_data) {?>
+                    <tr>
+                    <td><?php echo @$stat_data['stat_date'];?></td>
+                    <td style="text-align:center;"><?php echo (@$stat_data['cea'][0]['pv']+@$stat_data['cea'][1]['pv']);?></td>
+                    <td style="text-align:center;"><?php if (@array_sum(@$stat_data['data']['s']['p'])) {echo @array_sum(@$stat_data['data']['s']['p']);} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@array_sum($stat_data['data']['e']['p'])) {echo @array_sum($stat_data['data']['e']['p']);} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['e']['g'][1]) {echo @$stat_data['data']['e']['g'][1];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['e']['g'][0]) {echo @$stat_data['data']['e']['g'][0];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@array_sum(@$stat_data['data']['p']['uv']['p'])) {echo @array_sum(@$stat_data['data']['p']['uv']['p']);} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@array_sum(@$stat_data['data']['p']['pv']['p'])) {echo @array_sum(@$stat_data['data']['p']['pv']['p']);} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['op']['pv']) {echo @$stat_data['data']['op']['pv'];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['p']['pv']['g'][1]) {echo @$stat_data['data']['p']['pv']['g'][1];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['p']['pv']['g'][0]) {echo @$stat_data['data']['p']['pv']['g'][0];} else {echo 0;}?></td>
+                    </tr>
+                <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+        <?php } elseif (@$_GET['classify'] == 1) {?>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th>日期</th>
+                    <th style="text-align:center;">创建活动按钮点击数</th>
+                    <th style="text-align:center;">创建活动数量</th>
+                    <th style="text-align:center;">新增有效活动数量</th>
+                    <th style="text-align:center;">新增男有效活动</th>
+                    <th style="text-align:center;">新增女有效活动</th>
+                    <th style="text-align:center;">上传照片人数</th>
+                    <th style="text-align:center;">上传照片数</th>
+                    <th style="text-align:center;">男上传照片总数</th>
+                    <th style="text-align:center;">女上传照片总数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($adds as $add) {?>
+                    <tr>
+                    <td><?php echo @$add['stat_date'];?></td>
+                    <td style="text-align:center;"><?php echo (@$add['data']['cea'][0]['pv']+@$add['data']['cea'][1]['pv']);?></td>
+                    <td style="text-align:center;"><?php if (@array_sum(@$add['data']['e_sum']['p'])) {echo @array_sum(@$add['data']['e_sum']['p']);} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@array_sum($add['data']['e_able']['p'])) {echo @array_sum($add['data']['e_able']['p']);} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$add['data']['e_able']['g'][1]) {echo @$add['data']['e_able']['g'][1];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$add['data']['e_able']['g'][0]) {echo @$add['data']['e_able']['g'][0];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@array_sum(@$add['data']['u_uv']['p'])) {echo @array_sum(@$add['data']['u_uv']['p']);} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@array_sum(@$add['data']['u_pv']['p'])) {echo @array_sum(@$add['data']['u_pv']['p']);} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$add['data']['u_pv']['g'][1]) {echo @$add['data']['u_pv']['g'][1];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$add['data']['u_pv']['g'][0]) {echo @$add['data']['u_pv']['g'][0];} else {echo 0;};?></td>
+                    </tr>
+                <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+        <?php } elseif (@$_GET['classify'] == 2) {?>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th>日期</th>
+                    <th style="text-align:center;">创建活动按钮点击数</th>
+                    <th style="text-align:center;">创建活动数量</th>
+                    <th style="text-align:center;">新增有效活动数量</th>
+                    <th style="text-align:center;">上传照片人数</th>
+                    <th style="text-align:center;">上传照片数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($stat_datas as $stat_data) {?>
+                    <tr>
+                    <td><?php echo @$stat_data['stat_date'];?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['cea'][0]['pv']) {echo @$stat_data['cea'][0]['pv'];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['s']['p'][0]) {echo @$stat_data['data']['s']['p'][0];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['e']['p'][0]) {echo @$stat_data['data']['e']['p'][0];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['p']['uv']['p'][0]) {echo @$stat_data['data']['p']['uv']['p'][0];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['p']['pv']['p'][0]) {echo @$stat_data['data']['p']['pv']['p'][0];} else {echo 0;}?></td>
+                    </tr>
+                <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+        <?php } elseif (@$_GET['classify'] == 3) {?>
+        <div id="page-stats" class="block-body collapse in">
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th>日期</th>
+                    <th style="text-align:center;">创建活动按钮点击数</th>
+                    <th style="text-align:center;">创建活动数量</th>
+                    <th style="text-align:center;">新增有效活动数量</th>
+                    <th style="text-align:center;">上传照片人数</th>
+                    <th style="text-align:center;">上传照片数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($stat_datas as $stat_data) {?>
+                    <tr>
+                    <td><?php echo @$stat_data['stat_date'];?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['cea'][1]['pv']) {echo @$stat_data['cea'][1]['pv'];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['s']['p'][1]) {echo @$stat_data['data']['s']['p'][1];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['e']['p'][1]) {echo @$stat_data['data']['e']['p'][1];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['p']['uv']['p'][1]) {echo @$stat_data['data']['p']['uv']['p'][1];} else {echo 0;}?></td>
+                    <td style="text-align:center;"><?php if (@$stat_data['data']['p']['pv']['p'][1]) {echo @$stat_data['data']['p']['pv']['p'][1];} else {echo 0;}?></td>
+                    </tr>
+                <?php }?>
+              </tbody>
+            </table>
+                <!--- START 分页模板 --->
+                <?php echo $page_html;?>
+                <!--- END --->
+        </div>
+        <?php }?>
+    </div>
+
+<script>
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var html='';
+	html+='<option value="0">--请选择--</option>';
+	html+='<option value="1">创建活动数量</option>';
+	html+='<option value="2">新增有效活动数量</option>';
+	html+='<option value="3">新增男有效活动</option>';
+	html+='<option value="4">新增女有效活动</option>';
+	html+='<option value="5">上传照片人数</option>';
+	html+='<option value="6">上传照片数</option>';
+	html+='<option value="7">男上传照片总数</option>';
+	html+='<option value="8">女上传照片总数</option>';
+	$('#classify').html(html);
+	
+})
+$(function() {
+	$('select').change(function(){
+		var start_date=$('#start_date').val();
+        var end_date=$('#end_date').val();
+        var classify=$(this).val();
+        $.ajax({
+            'type':'post',
+            'url':'picActivity',
+            'data':{'start_date':start_date,
+                    'end_date':end_date,
+                    'classify':classify},
+            'success':function(e){
+                    $('#sum').val(e);
+                }
+            },'json')
+	})
+    
+})
+</script>
+	
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

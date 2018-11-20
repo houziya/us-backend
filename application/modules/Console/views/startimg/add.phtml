@@ -1,0 +1,113 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>    
+<div class="well">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">请填写启动图资料</a></li>
+    </ul>
+    <div class="btn-toolbar">
+        <button id="android" class="btn btn-primary">android</button>
+        <button id="ios" class="btn" style="width:78px">ios</button>
+    </div>
+    
+    <div id="myTabContent1" class="tab-content">
+        <div class="tab-pane active in" id="home">
+            <form id="tab1" method="post" action="add" autocomplete="off" enctype="multipart/form-data">
+                <label>启动图</label>
+                <input type="file" name="android" required="true" style="width:180px">
+                <label>标题</label>
+                <input type="text" name="title" required="true" placeholder="标题" style="width:206px">
+                <label>跳转地址</label>
+                <input type="text"  name="skip_url" value="" required="true" placeholder="跳转地址">
+                <label>时间控制</label>
+                <input type="text"  name="duration" value="" placeholder="时间控制">
+                <label>启动图是否允许跳过</label>
+                <select name="can_skip">
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+                <label>类型</label>
+                <select name="type" required="true">
+                    <option value="0">--请选择--</option>
+                    <option value="1">Web</option>
+                    <option value="2">现场</option>
+                </select>
+                <label>版本码</label>
+                <?php foreach ($package_datas as $package_data) {
+                        if ($package_data['platform'] == 0) {
+                ?>
+                <input type="checkbox"  name="code[]" value="<?php echo $package_data['code'];?>" style="margin:0px;"><?php echo $package_data['code'];?>
+                <?php }}?>
+                <div class="btn-toolbar">
+                    <button type="submit" class="btn btn-primary"><strong>提交</strong></button>
+                    <div class="btn-group"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="myTabContent2" class="tab-content">
+        <div class="tab-pane active in" id="home">
+            <form id="tab2" method="post" action="add" autocomplete="off" enctype="multipart/form-data"  style="display:none">
+                <label>ios4</label>
+                <input type="file" name="ios4" required="true" style="width:180px">
+                <label>ios5</label>
+                <input type="file" name="ios5" required="true" style="width:180px">
+                <label>ios6</label>
+                <input type="file" name="ios6" required="true" style="width:180px">
+                <label>ios6s</label>
+                <input type="file" name="ios6s" required="true" style="width:180px">
+                <label>标题</label>
+                <input type="text" name="title" required="true" placeholder="标题" style="width:206px">
+                <label>跳转地址</label>
+                <input type="text"  name="skip_url" value="" required="true" placeholder="跳转地址">
+                <label>时间控制</label>
+                <input type="text"  name="duration" value="" placeholder="时间控制">
+                <label>启动图是否允许跳过</label>
+                <select name="can_skip">
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+                <label>选择类型</label>
+                <select name="type" required="true">
+                    <option value="0">--请选择--</option>
+                    <option value="1">Web</option>
+                    <option value="2">现场</option>
+                </select>
+                <label>版本码</label>
+                <?php foreach ($package_datas as $package_data) {
+                        if ($package_data['platform'] == 1) {
+                ?>
+                <input type="checkbox"  name="code[]" value="<?php echo $package_data['code'];?>" style="margin:0px;"><?php echo $package_data['code'];?>
+                <?php }}?>
+                <div class="btn-toolbar">
+                    <button type="submit" class="btn btn-primary"><strong>提交</strong></button>
+                    <div class="btn-group"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+$(function() {
+	$('#android').click(function() {
+	    $(this).addClass('btn-primary').siblings().removeClass('btn-primary');
+	    $('#tab1').show();
+	    $('#tab2').hide();
+	})
+	$('#ios').click(function() {
+	    $(this).addClass('btn-primary').siblings().removeClass('btn-primary');
+	    $('#tab2').show();
+	    $('#tab1').hide();
+	})
+})
+</script>
+<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

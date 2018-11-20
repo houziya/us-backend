@@ -1,0 +1,79 @@
+<?php 
+include (dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+    echo @$osadmin_action_alert;
+    echo @$osadmin_quick_note;
+?>
+
+<div class="well">
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#home" data-toggle="tab">管理渠道账号</a></li>
+	</ul>
+
+	<div id="myTabContent" class="tab-content">
+		<div class="tab-pane active in" id="home">
+
+			<form id="tab" method="post" action="subSponsorsModify?cid=<?php echo $_GET['cid']; ?>" autocomplete="off">
+				<label>主渠道名称</label>
+				<select name="main_channel_name" id="DropDownChannelName" class="input-xlarge">
+					<?php
+					if (!empty($mainChannel)) {
+					   foreach ($mainChannel as $v) {
+					       if($subSponsors['cid'] == $v['cid']) {
+				    ?>
+							<option value="<?php echo $v['cid'];?>" selected ><?php echo $v['main_channel_name'];?></option>
+					<?php 
+					       } else {
+					?>
+							<option value="<?php echo $v['cid'];?>"><?php echo $v['main_channel_name'];?></option>
+					<?php
+					       }
+					   }
+					}
+					?>
+				</select>
+				<label>渠道平台</label>
+				<select name="platform" id="DropDownPlatform" class="input-xlarge">
+				<?php 
+				    if ($subSponsors['platform'] == 1) {
+				?>
+					<option value="1" selected>Android</option>
+					<option value="0">iOS</option>
+				<?php 
+				    } else {
+				?>
+					<option value="1">Android</option>
+					<option value="0" selected>iOS</option>
+				<?php 
+				    }
+				?>
+				</select>
+				<label>分渠道名称</label>
+				<input type="text" id="sub_channel_name" name="sub_channel_name" value="<?php echo $subSponsors['sub_channel_name'];?>" class="input-xlarge" required="true" />
+				<label>渠道号</label>
+				<input type="text" name="channel_code" value="<?php echo $subSponsors['channel_code']; ?>" class="input-xlarge" required="true" readonly />
+				<label>渠道token</label>
+				<input type="text" name="channel_token" value="<?php echo $subSponsors['channel_token']; ?>" class="input-xlarge" required="true" readonly />
+				<label>扣量比例</label>
+				<input type="text" name="proportion" value="<?php echo $subSponsors['proportion']; ?>" class="input-xlarge" required="true"  />
+				<label>结算单价</label>
+				<input type="text" name="unitPrice" value="<?php echo $subSponsors['unitPrice']; ?>" class="input-xlarge" required="true" />
+				<input type="hidden" value="<?php echo $_GET['id']; ?>" name="id" />
+				<div class="btn-toolbar">
+					<button type="submit" class="btn btn-primary">
+						<strong>提交</strong>
+					</button>
+					<div class="btn-group"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include (dirname(__DIR__).'/footer.phtml');?>

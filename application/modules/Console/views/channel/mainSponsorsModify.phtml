@@ -1,0 +1,52 @@
+<?php 
+include (dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+    echo @$osadmin_action_alert;
+    echo @$osadmin_quick_note;
+?>
+<style>
+    .groups{
+       color:#333333;
+       font-weight:blod;
+    }
+</style>
+<div class="well">
+    <ul class="nav nav-tabs">
+        <a href="#home">请填写主渠道商资料</a>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+         <div class="tab-pane active in" id="home">
+           <form id="tab" method="post">
+                <label>主渠道名称 <i class="label label-important">*必填项</i></label>
+                <input type="text" name="channelName" class="input-xlarge" required="true" autofocus="true"  value="<?php echo $mainSponsorsInfo[0]['main_channel_name']; ?>">
+                <label>选择渠道商 <i class="label label-important">*必填项</i></label>
+                <?php
+                echo "<select  name='userId' id='DropDownTimezone' class='input-xlarge' >";
+                foreach($users as $key=>$user){
+                    echo "<option class='groups' disabled >$key</option>";
+                    foreach ($user as $data) {
+                        foreach($data as $info) {
+                            if ($mainSponsorsInfo[0]['uid'] == $info['user_id']) {
+                                echo "<option value=".$info['user_id']." selected >".$info['user_name']."</option>";
+                            } else {
+                                echo "<option value=".$info['user_id'].">".$info['user_name']."</option>";
+                            }
+                        }
+                    }
+                }
+                echo '</select>';
+                ?>
+                <div class="btn-toolbar">
+                    <button type="submit" class="btn btn-primary"><strong>提交</strong></button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include (dirname(__DIR__).'/footer.phtml');?>

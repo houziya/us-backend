@@ -1,0 +1,103 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="channel" method="GET" style="margin-bottom:0px">
+    <div style="float:left;margin-right:5px">
+        <label> 选择日期 </label>
+        <input type="text" id="start_date" name="date" value="<?php echo @$date;?>" placeholder="日期" >
+    </div>
+    
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left">
+        <button type="submit" class="btn btn-primary"><strong>确定</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    
+    </form>
+</div>
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">渠道数据列表</a>
+        <div id="page-stats" class="block-body collapse in">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th style="width:70px">序号</th>
+                          <th style="width:50px">渠道号</th>
+                          <th style="width:80px">激活量</th>
+                          <th style="width:80px">单价</th>
+                          <th style="width:50px">计算金额</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  <?php $i = 1;foreach ($list as $row) {?>
+                      <tr>
+                          <td style="vertical-align:middle"><?php echo $i;//@$row['id'];?></td>
+                          <td style="vertical-align:middle"><?php echo @$row['sub_channel_name'];?></td>
+                          <td style="vertical-align:middle"><?php echo round($row['sum_finally']);?></td>
+                          <td style="vertical-align:middle"><?php echo @$row['unitPrice'];?></td>
+                          <td style="vertical-align:middle"><?php echo (round($row['sum_finally']) * $row['unitPrice']); ?></td>
+                      </tr>
+                  <?php $i++;}?>
+                  </tbody>
+              </table> 
+                <!--- START 分页模板 --->
+                
+                <?php echo @$page_html;?>
+                    
+                <!--- END --->
+        </div>
+    </div>
+    
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php //echo @$osadmin_action_confirm;?>
+<script type="text/javascript">
+
+$(function() {
+	var date=$( "#start_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var date=$( "#end_date" );
+	date.datepicker({ dateFormat: "yy-mm-dd" });
+	date.datepicker( "option", "firstDay", 1 );
+});
+$(function() {
+	var html='';
+	html+='<option value="0">--请选择--</option>';
+	html+='<option value="1">H5分享</option>';
+	$('#classify').html(html);
+	
+})
+$(function() {
+	$('select').change(function(){
+		var start_date=$('#start_date').val();
+        var end_date=$('#end_date').val();
+        var classify=$(this).val();
+        $.ajax({
+            'type':'post',
+            'url':'sharerelated',
+            'data':{'start_date':start_date,
+                    'end_date':end_date,
+                    'classify':classify},
+            'success':function(e){
+                    $('#sum').val(e);
+                }
+            },'json')
+	})
+    
+})
+</script>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php 
+include(dirname(__DIR__)."/footer.phtml");
+?>

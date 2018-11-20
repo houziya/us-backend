@@ -1,0 +1,33 @@
+<?php 
+include (dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+    echo @$osadmin_action_alert;
+    echo @$osadmin_quick_note;
+?>
+
+<div class="well">
+    <ul class="nav nav-tabs">
+        <a href="#home">修改渠道扣量比例</a>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+         <div class="tab-pane active in" id="home">
+           <form id="tab" method="post">
+                <label> 分渠道名称  </label>
+                <input type="text" name="subName" class="input-xlarge" disabled autofocus="true"  value="<?php echo @$subName; ?>" />
+                <label>分渠道扣量比例<i class="label label-important"> *必填项  </i></label>
+                <input type="text" name="proportion" class="input-xlarge" autofocus="true" value="<?php echo @$proportion; ?>" />
+                <div class="btn-toolbar">
+                    <button type="submit" class="btn btn-primary"><strong>提交</strong></button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>  

@@ -1,0 +1,146 @@
+<?php
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+    <!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+    <script src="<?php echo Console\ADMIN_URL ?>assets/js/html5uploader.js"></script>
+    <style type="text/css">
+        .opt-pic>div {display: inline-block;}
+        .positions {position: relative;margin-right: 20px;}
+        .positions.ipt-time {bottom: 10px;}
+        .positions.btn-posit {bottom: 14px;}
+        #btnChoose input {display: none;}
+        #btnReturn {margin-left: 50px;}
+        img {width:170px;height:154px;}
+        ul.gnineh {width: 960px;height: auto;list-style: none;margin: 0; padding: 0;}
+        ul.gnineh li {width: 170px;float: left; display: inline;margin: 10px; padding: 0;position: relative;}
+        ul.gnineh li:hover {z-index: 99;}
+        ul.gnineh li img {position: relative;filter: alpha(opacity=80s);opacity: 0.7;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";}
+        ul.gnineh li:hover img{z-index: 999;filter: alpha(opacity=100);opacity: 1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";}
+        ul.gnineh li .info {position: absolute;left: -10px; top: -10px;padding: 170px 10px 1px;width: 170px;display: none;background: #fff;font-size: 1.2em;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+        ul.gnineh li:hover .info {display: inline-block;}
+        ul.gnineh li h2 {font-size: 1.0em;font-weight: normal;text-transform: uppercase;margin: 0; padding: 10px 0;}
+        ul.gnineh li p {padding: 0; margin: 0; font-size: 0.9em;}
+        .imgRemove {margin-left: 48px;}
+        .pagination{
+            margin-left:390px;clear:both;
+        }
+    </style>
+    <div class="opt-pic" style="">
+        <div class="" style="margin-right: 5px;">
+            <label class="">活动ID：</label>
+            <label class="">归属Us账号：</label>
+        </div>
+        <div class="" style="margin-right: 100px;">
+            <label class="eventId"><?php echo $flag ? $result['eventId'] : $eventId;?></label>
+            <label class="userId"><?php echo $flag ? $result['userId'] : $userId;?></label>
+        </div>
+        <div class="positions ipt-time" style="">
+            <input type="text" id="picTime" name="picTime" value="" placeholder="" />
+        </div>
+        <div class="positions btn-posit" style="">
+            <button type="button" id="btnConfirm" class="btn btn-primary btn-pic"><strong>确认排序</strong></button>
+        </div>
+        <div class="positions btn-posit" style="">
+            <button type="button" id="btnOrder" class="btn btn-primary btn-pic"><strong>调整排序</strong></button>
+        </div>
+        <div class="positions btn-posit" style="" >
+        	<i id="btnChoose">
+          	  <button type="button" class="btn btn-primary btn-pic"><strong>选择照片</strong></button>
+            </i>
+        </div>
+        <div class="positions btn-posit" style="position:relative; bottom: 14px;">
+            <button type="button" id="btnUpload" class="btn btn-primary btn-pic"><strong>开始上传</strong></button>
+        </div>
+        <div class="positions btn-posit" style="">
+            <button type="button" id="btnReturn" class="btn btn-primary btn-pic"><strong>返回</strong></button>
+        </div>
+        <div style="clear:both;"></div>
+        <input type="hidden" name="flag" id="flag" value="<?php echo $flag;?>" />
+    </div>
+
+        <?php
+        if ($flag == 0) {
+            ?>
+            <ul class="gnineh">
+
+            </ul>
+            <?php
+        }
+        ?>
+
+        <?php
+        if ($flag == 1) {
+        ?>
+            <ul class="gnineh">
+
+                <?php
+                if (isset($result)) {
+                    foreach ($result['pictureList'] as $data) {
+                        ?>
+                        <li>
+                            <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN; ?>/event/moment/<?php echo $data['object_id']; ?>.jpg">
+                            <div class="info">
+                                <?php
+                                if ($data['status'] == 2) {
+                                    ?>
+                                    <i class="icon-lock"> </i> <span style="color:orange;">锁定活动照片</span>
+                                    <?php
+                                }
+                                ?>
+                                    <a title="描述" class="imgContent" href="#">
+                                        <button class="btn btn-primary">描述</button>
+                                    </a>
+                                    <a title="删除" class="imgRemove"
+                                       href="appendDetail?handle=delPic&pictureId=<?php echo $data['id']; ?>&momentId=<?php echo $data['moment_id']; ?>&eventId=<?php echo $data['event_id']; ?>#myModal"
+                                       data-toggle="modal">
+                                        <button class="btn btn-primary">删除</button>
+                                    </a>
+                            </div>
+                        </li>
+                        <?php
+                    }
+                }
+                ?>
+            </ul>
+        <?php
+        }
+        ?>
+
+
+<?php //echo $pageHtml;?>
+<?php echo $confirm; ?>
+
+<script type="text/javascript">
+    $(function() {
+        //var picTime = $( "#picTime" );
+        //picTime.datepicker({ dateFormat: "yy-mm-dd" });
+        //picTime.datepicker( "option", "firstDay", 1 );
+    });
+    $(function() {
+        var flag = $('#flag').val();
+        if (flag == 1) {
+            $('.positions:not(:last)').hide();
+            $('#btnReturn').css({'position': 'relative', 'bottom': '14px', 'margin-left': '800px'});
+            var imageLiAmount = Math.ceil($('.gnineh li').length / 5);
+            $('.gnineh').height(imageLiAmount * 170 + 60 + 'px');
+        } else {
+            $('#btnConfirm').hide();
+            $('#btnUpload').hide();
+        }
+    });
+    $(function() {
+        $('#btnReturn').click(function() {
+            location.href = 'appendPicture';
+        });
+    });
+</script>
+    <!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

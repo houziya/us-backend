@@ -1,0 +1,67 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+<style type="text/css">
+img {width:220px;height:200px;}
+ul.gnineh {width: 960px;list-style: none;margin: 0 auto; padding: 0;}
+ul.gnineh li {width: 220px;float: left; display: inline;margin: 10px; padding: 0;position: relative;}
+ul.gnineh li:hover {z-index: 99;}
+ul.gnineh li img {position: relative;filter: alpha(opacity=80s);opacity: 0.7;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";}
+ul.gnineh li:hover img{z-index: 999;filter: alpha(opacity=100);opacity: 1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";}
+ul.gnineh li .info {position: absolute;left: -10px; top: -10px;padding: 210px 10px 20px;width: 220px;display: none;background: #fff;font-size: 1.2em;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+ul.gnineh li:hover .info {display: block;}
+ul.gnineh li h2 {font-size: 1.0em;font-weight: normal;text-transform: uppercase;margin: 0; padding: 10px 0;}
+ul.gnineh li p {padding: 0; margin: 0; font-size: 0.9em;}
+.pagination{
+	margin-left:390px;clear:both;
+}
+</style>
+<ul class="gnineh">
+    <?php 
+        foreach ($pictureList as $data) {
+    ?>
+    <li>
+        <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN; ?>/event/moment/<?php echo $data['object_id']; ?>.jpg" >
+        <div class="info">
+        <?php 
+            if ($data['status'] ==2) {
+        ?>
+       		<h5> <i class="icon-lock"> </i> <span style="color:orange;">锁定活动照片</span></h5>
+        <?php
+            }
+        ?>
+            <h5> <i class="icon-user"> </i> <span><?php echo $data['nickname']; ?></span></h5>
+            <h5> 
+            <i class="icon-pencil"></i> 
+            <span> 
+            <?php 
+                if (empty($data['content'])) {
+                     echo '暂无照片描述';
+                } else {
+                     echo $data['content'];
+                }
+            ?>
+            </span>
+            </h5>
+            <h5> <i class="icon-camera"></i> <span> <?php echo $data['shoot_time']; ?> </span> <a title= "删除" class="remove" href="eventDetail?method=del&pid=<?php echo $data['id']; ?>&mid=<?php echo $data['moment_id'];?>&eventId=<?php echo $_GET['eventId']; ?>#myModal" data-toggle="modal"><button class="btn btn-primary">删除</button></a></h5>
+        </div>
+     </li>
+    <?php 
+        }
+    ?>
+</ul>
+
+<?php echo $pageHtml;?>
+<?php echo $confirm; ?>
+
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

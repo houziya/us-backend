@@ -1,0 +1,54 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- TPLSTART 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+<?php
+ echo @$osadmin_action_alert;
+ echo @$osadmin_quick_note;
+?>
+<div class="btn-toolbar">
+    <a href="add" class="btn btn-primary"><i class="icon-plus"></i> 账号组</a>
+</div>
+<div class="block">
+    <a href="#page-stats" class="block-heading" data-toggle="collapse">账号组列表</a>
+    <div id="page-stats" class="block-body collapse in">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>账号组名</th>
+                <th>所有者</th>
+                <th>描述</th>
+                <th width="80px">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($groups as $group) {?>
+            <tr>
+            <td><?php echo $group['group_id'];?></td>
+            <td><?php echo $group['group_name'];?></td>
+            <td><?php echo $group['owner_name'];?></td>
+            <td><?php echo $group['group_desc'];?></td>
+            <td>
+            <a href="members?group_id=<?php echo $group['group_id'];?>" title= "成员列表" ><i class="icon-list-alt"></i></a>
+            &nbsp;
+            <a href="modify?group_id=<?php echo $group['group_id'];?>" title= "修改" ><i class="icon-pencil"></i></a>
+            &nbsp;
+            <?php if ($group['group_id'] != 1) {?>
+            <a data-toggle="modal" href="groups?method=del&group_id=<?php echo $group['group_id'];?>#myModal"  title= "删除" ><i class="icon-remove" href="groups?method=del&group_id=<?php echo $group['group_id'];?>#myModal" data-toggle="modal" ></i></a>
+            <?php }?>
+            </td>
+            </tr>
+            <?php }?>
+        </tbody>
+        </table>  
+    </div>
+</div>
+
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php echo @$osadmin_action_confirm; ?>
+
+<!-- TPLEND 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include(dirname(__DIR__).'/footer.phtml');?>

@@ -1,0 +1,73 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>    
+<div class="well">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">请填写安装包资料</a></li>
+    </ul>
+    <div class="btn-toolbar">
+        <button id="android" class="btn btn-primary">android</button>
+        <button id="ios" class="btn" style="width:78px">ios</button>
+    </div>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active in" id="home">
+            <form id="tab1" method="post" action="add" autocomplete="off" enctype="multipart/form-data">
+                <input type="hidden" name="platform" value="0">
+                <label>安装包</label>
+                <input type="file" name="file_name" required="true" style="width:180px">
+                <label>版本号</label>
+                <input type="text" name="version" value="" class="input-xlarge" required="true" >
+                <label>版本码</label>
+                <input type="text" name="code" value="" class="input-xlarge" required="true" >
+                <label>描述</label>
+                <textarea name="description" rows="3" class="input-xlarge" required="true"></textarea>
+            <div class="btn-toolbar">
+                <button type="submit" class="btn btn-primary"><strong>提交</strong></button>
+                <div class="btn-group"></div>
+            </div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active in" id="home">
+            <form id="tab2" method="post" action="add" autocomplete="off" enctype="multipart/form-data" style="display:none">
+                <input type="hidden" name="platform" value="1">
+                <label>版本号</label>
+                <input type="text" name="version" value="" class="input-xlarge" required="true" >
+                <label>版本码</label>
+                <input type="text" name="code" value="" class="input-xlarge" required="true" >
+                <label>描述</label>
+                <textarea name="description" rows="3" class="input-xlarge" required="true"></textarea>
+            <div class="btn-toolbar">
+                <button type="submit" class="btn btn-primary"><strong>提交</strong></button>
+                <div class="btn-group"></div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+$(function() {
+	$('#android').click(function() {
+	    $(this).addClass('btn-primary').siblings().removeClass('btn-primary');
+	    $('#tab1').show();
+	    $('#tab2').hide();
+	})
+	$('#ios').click(function() {
+	    $(this).addClass('btn-primary').siblings().removeClass('btn-primary');
+	    $('#tab2').show();
+	    $('#tab1').hide();
+	})
+})
+</script>
+<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+<?php include(dirname(__DIR__)."/footer.phtml"); ?>

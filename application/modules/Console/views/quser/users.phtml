@@ -1,0 +1,104 @@
+<?php 
+setcookie('complete_url',$_SERVER["QUERY_STRING"],0);
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+
+<div style="border:0px;padding-bottom:5px;height:auto">
+    <form action="users" method="GET" style="margin-bottom:0px">
+    <div style="float:left;margin-left:280px">
+        <label>&nbsp;</label>
+        <input type="text" name="uid" value="<?php echo @$_GET['uid'];?>" placeholder="用户ID" onkeyup='this.value=this.value.replace(/\D/gi,"")'>
+    </div>
+    <div style="float:left;margin-left:5px">
+        <label>&nbsp;</label>
+        <input type="text" name="nickname" value="<?php echo @$_GET['nickname'];?>" placeholder="用户昵称" >
+    </div>
+    <div class="btn-toolbar" style="padding-top:15px;padding-bottom:0px;margin-bottom:0px;float:left;margin-left:5px">
+        <button type="submit" class="btn btn-primary"><strong>检索用户</strong></button>
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">账号列表</a>
+        <div id="page-stats" class="block-body collapse in">
+            <?php foreach ($users as $user) {?>
+            <div style="float:left">
+                <ul style="float:left;margin-left:150px;margin-top:30px;list-style:none">
+                    <li>
+                        <img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/profile/avatar/<?php echo $user['avatar']?>.jpg" style="width:150px;height:150px;object-fit:cover">
+                    </li>
+                </ul>
+                <ul style="float:left;margin-left:80px;margin-top:30px;list-style:none;width:120px">
+                    <li>昵称:<?php echo $user['nickname']?></li>
+                    <li style="margin-top:8px">us.账号:<?php echo $user['uid']?></li>
+                    <li style="margin-top:8px">性别:<?php if ($user['gender'] ==0) {echo '女';} else {echo '男';}?></li>
+                    <li style="margin-top:8px">参与活动数量:<?php if (!empty(@$user['event'])) {echo @$user['event'];} else {echo 0;}?></li>
+                    <li style="margin-top:8px">上传照片总量:<?php if (!empty(@$user['picture'])) {echo @$user['picture'];} else {echo 0;}?></li>
+                    <li style="margin-top:8px">分享次数:<span style="color:blue">暂不提供</span></li>
+                    <li style="margin-top:8px">手机型号:<?php if (@$user['phone_model']) {echo @$user['phone_model'];} else {echo '<span style="color:blue">未知</span>';}?></li>
+                    <li style="margin-top:8px">管理系统:<?php if (@$user['os_version']) {echo @$user['os_version'];} else {echo '<span style="color:blue">未知</span>';}?></li>
+                    <li style="margin-top:8px">客户端版本:<?php if (@$user['client_version']) {echo @$user['client_version'];} else {echo '<span style="color:blue">未知</span>';}?></li>
+                    <?php if ($user['status'] == 0) {?>
+                    <li style="margin-top:8px"><a href="users?uid=<?php echo $user['uid']?>&method=mod&status=1#myModal"><button class="btn btn-primary dj" href="users?uid=<?php echo $user['uid']?>&method=mod&status=1#myModal" data-toggle="modal">冻结账号</button></a></li>
+                    <?php } else {?>
+                    <li style="margin-top:8px"><a href="users?uid=<?php echo $user['uid']?>&method=mod&status=0#myModal"><button class="btn btn-success dj" href="users?uid=<?php echo $user['uid']?>&method=mod&status=0#myModal" data-toggle="modal">解冻账号</button></a></li>
+                    <?php }?>
+                </ul> 
+                <ul style="float:left;margin-left:90px;margin-top:30px;list-style:none;">
+                    <li>注册时间:<?php echo @$user['reg_time']?></li>
+                    <!--<li style="margin-top:8px">注册城市:</li>
+                    <li style="margin-top:8px">最后登陆时间:</li>
+                    <li style="margin-top:8px">最后登陆地点:</li>-->
+                    <li style="margin-top:8px">&nbsp;</li>
+                    <li style="margin-top:8px">&nbsp;</li>
+                    <li style="margin-top:8px">&nbsp;</li>
+                    <li style="margin-top:8px">&nbsp;</li>
+                    <li style="margin-top:120px"><a href="detail?member_uid=<?php echo $user['uid']?>"><button class="btn btn-primary hd">参与活动</button></a></li>
+                </ul>
+                
+                <ul style="float:left;margin-top:30px;list-style:none">
+                    <?php 
+                    foreach ($uids as $uid) {
+                    if ($user['token'] == $uid) {?>
+                        <?php if ($user['enabled'] == 1) {?>
+                        <li style="margin-top:253px"><a href="users?uid=<?php echo $user['uid']?>&method=cancel"><button class="btn btn-primary hd">注销账号</button></a></li>
+                        <?php } else {?>
+                        <li style="margin-top:253px"><button class="btn btn-danger" style="color:gray">已注销</button></li>
+                        <?php }?>
+                    <?php }}?>
+                </ul>
+                
+            </div>
+            <?php }?>
+                <!--- START 分页模板 --->
+                    
+                <!--- END --->
+        </div>
+        <?php echo $page_html;?>
+    </div>
+    
+    <script type="text/javascript">
+        $(function(){
+        	$('div.pagination').css('margin-left','160px');
+        })
+        
+    </script>
+
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php echo @$osadmin_action_confirm;?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php 
+include(dirname(__DIR__)."/footer.phtml");
+?>
+

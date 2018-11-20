@@ -1,0 +1,11 @@
+<?php
+
+return [
+    'class' => Us\Config\Database\CLASSNAME,
+    'dsn' => Us\Config\Database\DSN,
+    'username' => Us\Config\Database\USERNAME,
+    'password' => Us\Config\Database\PASSWORD,
+    'charset' => Us\Config\Database\CHARSET,
+];
+
+?>

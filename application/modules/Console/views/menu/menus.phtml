@@ -1,0 +1,141 @@
+<?php
+include (dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 ---> 
+<?php 
+ echo @$osadmin_action_alert;
+ echo @$osadmin_quick_note;
+?>
+<div class="btn-toolbar"  style="margin-bottom:2px;">
+    <a href="add"  class="btn btn-primary"><i class="icon-plus"></i> 功能</a>
+    <a data-toggle="collapse" data-target="#search" href="#"  title= "检索"><button class="btn btn-primary" style="margin-left:5px"><i class="icon-search"></i></button></a>
+</div>
+
+<div id="search" class="collapse out">
+<form class="form_search"  method="post" style="margin-bottom:0px">
+    <div style="float:left;margin-right:5px">
+        <label >选择菜单模块</label>
+        <select name="searchId" id="DropDownTimezone">
+        <?php
+            foreach($moduleOpt as $mid=>$options){
+                if ($moduleOptId==$mid) {
+                    echo "<option value=$mid selected>$options</option>";
+                } else {
+                    echo "<option value=$mid>$options</option>";
+                }
+            }
+         ?>
+        </select>
+    </div>
+    <div style="float:left;margin-right:5px">
+        <label>查询所有请留空</label>
+        <input type="text" name="menuName" value = <?php echo $menuName; ?> > 
+        <input type="hidden" name="search" value="1" class="input-medium search-query">
+    </div>
+    <div class="btn-toolbar" style="padding-top:25px;padding-bottom:0px;margin-bottom:0px">
+        <button type="submit" class="btn btn-primary">检索</button>
+    </div>
+    <div style="clear:both;"></div>
+</form>
+</div>
+
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">功能列表</a>
+        <div id="page-stats" class="block-body collapse in">
+
+               <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th style="width:30px">#</th>
+                    <th style="width:90px">名称</th>
+                    <th style="width:180px">URL</th>
+                    <th style="width:80px">所属模块</th>
+                    <th style="width:80px">菜单</th>
+                    <th style="width:80px">所属菜单</th>
+                    <th style="width:80px">是否在线</th>
+                    <th style="width:80px">快捷菜单</th>
+                    <th style="width:180px">描述</th>
+                    <th style="width:80px">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                    foreach ($menuInfo as $menu) {
+                ?>
+                <tr> 
+                    <td> <?php echo $menu['menu_id']; ?> </td>
+                    <td><?php echo $menu['menu_name']; ?> </td>
+                    <td><?php echo $menu['menu_url']; ?> </td>
+                    <td>
+                    <?php 
+                            echo $moduleOpt[$menu['module_id']]; 
+                    ?>
+                    </td>
+                    <td>
+                    <?php 
+                        if ($menu['is_show']==1) {
+                            echo '显示';
+                        } else {
+                            echo '不显示';
+                        }
+                    ?>
+                    </td>
+                    <td>
+                    <?php 
+                    if ($menu['father_menu'] > 0) {
+                        echo $menu['father_menu_name']; 
+                    } else {
+                        echo '无';
+                    }
+                    ?>
+                    </td>
+                    <td>
+                    <?php 
+                        if($menu['online']==1) {
+                            echo '在线';
+                        } else {
+                            echo  '已下线';
+                        }
+                    ?>
+                   </td>
+                    <td>
+                    <?php 
+                        if ($menu['shortcut_allowed']==1) {
+                            echo '允许';
+                        } else {
+                            echo '不允许';
+                        } 
+                    ?>
+                    </td>
+                    <td><?php echo $menu['menu_desc']; ?></td>
+                    <td>
+                    <a href="modify?menuId=<?php echo $menu['menu_id']; ?> " title= "修改" ><i class="icon-pencil"></i></a>
+
+                    <?php 
+                        if ($menu['menu_id'] > 100) {
+                    ?>
+                    &nbsp;
+                    <a data-toggle="modal"  title= "删除" ><i class="icon-remove" href="menus?method=del&menuId=<?php echo $menu['menu_id']; ?> " ></i></a>
+                    <?php 
+                        }
+                    ?>
+                    </td>
+                    </tr>
+                    <?php 
+                       }
+                ?>
+              </tbody>
+            </table> 
+<!---START 分页模板--->
+<?php echo $pages; ?>
+<!--- END 分页--->
+        </div>
+    </div>
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php echo $confirm; ?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<?php 
+include (dirname(__DIR__).'/footer.phtml');
+?>

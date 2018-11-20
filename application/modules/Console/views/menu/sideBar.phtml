@@ -1,0 +1,84 @@
+<?php 
+    if($sidebarStatus){
+        echo  "<div id='sidebar-nav' class='sidebar-nav' style='position:fixed;overflow-y:auto;top:48px;bottom:0px;'>";
+    }else{
+        echo "<div id='sidebar-nav' class='sidebar-nav-hide'>";
+    }
+    foreach ($sidebar as  $module){  
+        if (count($module['menu_list']) >0){
+?>
+
+<a href="#sidebar_menu_<?php echo $module['module_id'] ?>" class="nav-header collapsed" data-toggle="collapse"><i class="<?php echo $module['module_icon'] ?>"></i><?php echo $module['module_name'] ?><i class="icon-chevron-up"></i></a>
+<ul id="sidebar_menu_<?php echo $module['module_id'] ?>" class="nav nav-list collapse in">
+
+<?php
+    $url = Console\ADMIN_URL;
+    foreach($module['menu_list'] as $menuList){
+ ?>  
+  
+    <?php 
+        $str = strtolower(substr($menuList['menu_url'],0,7));
+        if($str == 'http://'){
+    ?>
+        <li><a target=_blank href="<?php echo $menuList['menu_url']; ?>"><?php echo $menuList['menu_name']; ?></a></li>	
+    <?php 
+        }else{
+    ?>
+        <li><a href="javascript:void(0);" onclick="window.location.href='<?php echo $url.$menuList['menu_url']; ?>'"><?php echo $menuList['menu_name']; ?></a></li>
+    <?php 
+        }
+    }
+  
+?>
+
+</ul>
+ 
+<?php 
+        }
+    }
+?>
+    </div>
+<?php
+    if ($sidebarStatus) {
+        echo  "<div id='content' class='content' style='margin-top:48px;float:left;width:82.9%'>";
+    } else {
+        echo "<div id='content' class='content-fullscreen'>";
+    }
+?>
+    <div class="header">
+        <div class="stats">
+            <p class="stat"><!--<span class="number"></span></p>-->
+        </div>
+        <h1 class="page-title"><?php echo $content_header['menu_name'];?></h1>
+    </div>
+    <ul class="breadcrumb">
+    <?php //echo '<pre>';var_dump($_COOKIE['complete_url']);die;?>
+    <!--<li><a href="<?php //echo isset($content_header['father_menu_url']) ? array_reverse(explode('/', $content_header['father_menu_url']))[0] : '#';?>"><?php //echo $content_header['module_name']; ?></a> <span class="divider">/</span></li>-->
+    <li><a href="<?php if (isset($content_header['father_menu_url'])) {echo (array_reverse(explode('/', $content_header['father_menu_url']))[0].'?'.@$_COOKIE['complete_url']);} else {echo '#';}?>"><?php echo $content_header['module_name']; ?></a> <span class="divider">/</span></li>
+    <?php
+        if ($content_header['father_menu']){
+    ?>
+    <li><a href="#"><?php echo $content_header['menu_name']; ?><span class="divider">/</span></li>
+    <?php 
+        }
+    ?>
+        <li class="active"><?php echo $content_header['menu_name']; ?></li>
+    <?php 
+        if ($content_header['shortcut_allowed']) {
+            if ($content_header['menu_id']) {
+    ?>
+        <a title= "移除快捷菜单" href="#"><li class="active"><i class="icon-minus" method="del" url="#"></i></li></a>
+    <?php 
+          } else {
+    ?>
+            <a title= "加入快捷菜单" href="#"><li class="active"><i class="icon-plus" method="add" url="#"></i></li></a>
+    <?php 
+        }
+             }
+    ?>
+    </ul>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="bb-alert alert alert-info" style="display:none;">
+                <span>操作成功</span>
+            </div>

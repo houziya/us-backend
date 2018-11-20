@@ -1,0 +1,8 @@
+[product]
+application.directory=APP_PATH "/application/" 
+application.view.ext="phtml"
+application.modules={{default .Env.US_PHP_MODULES "\"Us,Console\""}}
+trace.enabled={{default .Env.US_PHP_TRACE_ENABLED "false"}}
+instrument.enabled={{default .Env.US_PHP_INSTRUMENT_ENABLED "false"}}
+development={{default .Env.US_PHP_DEVELOPMENT_ENABLED "false"}}
+content.generator.enabled={{default .Env.US_PHP_CONTENT_GENERATOR_ENABLED "true"}}

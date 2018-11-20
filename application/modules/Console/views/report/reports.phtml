@@ -1,0 +1,62 @@
+<?php 
+include(dirname(__DIR__).'/header.phtml');
+include(dirname(__DIR__)."/menu/navibar.phtml");
+include(dirname(__DIR__)."/menu/sideBar.phtml");
+?>
+
+<!--- START 以上内容不需更改，保证该TPL页内的标签匹配即可 --->
+
+<?php 
+echo @$osadmin_action_alert;
+echo @$osadmin_quick_note;
+?>
+    <div class="block">
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">举报审核</a>
+        <div id="page-stats" class="block-body collapse in">
+            <table class="move " style="border:0px;width:50%" align="center" valign="center">
+            <?php foreach ($report_datas as $report_data) {?>
+                <tr>
+                    <td rowspan="3" style="border-top:0"><img src="http://<?php echo Us\Config\DOWNLOAD_DOMAIN?>/event/moment/<?php echo $report_data['data']['object_id']?>.jpg" style="width:220px;height:150px;object-fit:cover"></td>
+                    <td style="border-top:0">举报人:<a href="javascript:void(0);" style="color:gray;" onclick="window.location.href='/Console/Quser/users?uid=<?php echo $report_data['reporter']?>'"><?php echo mb_substr($report_data['reporter_name']['nickname'],0,5,'utf-8')?></a></td>
+                    <td style="border-top:0">被举报人:<a href="javascript:void(0);" style="color:gray;" onclick="window.location.href='/Console/Quser/users?uid=<?php echo $report_data['uid']?>'"><?php echo mb_substr($report_data['uid_name']['nickname'],0,5,'utf-8')?></a></td>
+                </tr>
+                <tr>
+                    <td style="border-top:0">照片来自：<a href="javascript:void(0);" style="color:gray;" onclick="window.location.href='/Console/Event/events?event_id=<?php echo $report_data['data']['event_id']?>'"><?php echo mb_substr($report_data['name']['name'],0,5,'utf-8'); ?></a></td>
+                    <td style="border-top:0">创建者：<a href="javascript:void(0);" style="color:gray;" onclick="window.location.href='/Console/Quser/users?uid=<?php echo $report_data['name']['uid']?>'"><?php echo mb_substr($report_data['creater_name']['nickname'],0,5,'utf-8'); ?></a></td>
+                </tr>
+                <tr>
+                    <td style="border-top:0"><a href="reports?report_id=<?php echo $report_data['id']?>&method=del#myModal"><button class="btn btn-primary" href="reports?report_id=<?php echo $report_data['id']?>&method=del#myModal" data-toggle="modal">删除照片</button></a></td>
+                    <td style="border-top:0"><a href="reports?report_id=<?php echo $report_data['id']?>&method=ignore"><button class="btn btn-primary">忽略</button></a></td>
+                </tr>
+            <?php }?>
+            </table> 
+                <!--- START 分页模板 --->
+                
+                <?php echo $page_html;?>
+                    
+                <!--- END --->
+        </div>
+    </div>
+    
+<!---操作的确认层，相当于javascript:confirm函数--->
+<?php echo @$osadmin_action_confirm;?>
+<!--- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 --->
+<script type="text/javascript">
+$(function() {
+    $('div.pagination').css('margin-left','290px');
+})
+
+$(function() {
+	$('table.move tr td').css('color','gray');
+	$('table.move tr td').hover(function() {
+		$(this).css('color','#000000');
+	},function() {
+		$(this).css('color','gray');
+	});
+})
+
+</script>
+
+<?php 
+include(dirname(__DIR__)."/footer.phtml");
+?>
